@@ -10,6 +10,9 @@
 # dependencies
 /node_modules
 
+# development angular only
+/.angular
+
 # profiling files
 chrome-profiler-events*.json
 speed-measure-plugin*.json
