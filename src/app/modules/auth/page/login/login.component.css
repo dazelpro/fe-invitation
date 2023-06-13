@@ -1,0 +1,48 @@
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+}
+
+.flex-left {
+    width: 40%;
+    display: grid;
+    place-items: center;
+    min-width: 300px;
+
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../../../../assets/images/pattern.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.flex-right {
+    width: 60%;
+    display: grid;
+    place-items: center;
+}
+
+.section-logo {
+    color: white;
+    text-align: center;
+}
+
+.form {
+    padding: 10px;
+    max-width: 400px;
+}
+
+.form>h1 {
+    margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+    .flex-right {
+        width: 100%;
+    }
+
+    .flex-left {
+        display: none;
+    }
+}
+

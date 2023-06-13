@@ -1,2 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;1,100;1,200;1,300;1,400;1,500;1,600&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
 @import "assets/css/grid.css";
+@import "assets/css/typography.css";
+@import "assets/css/component.css";
+@import "assets/css/spacing.css";
+
+:root {
+    --primary: #FFFFFF;
+    --secondary: #E8F6EF;
+    --tertiary: #726F7D;
+}
+
+body {
+    margin: 0;
+}

@@ -1,0 +1,52 @@
+<div class="flex-container">
+    <div class="flex-left">
+        <div class="section-logo">
+            <img src="https://picsum.photos/100" style="border-radius: 100%;" alt="">
+            <h2>DAZEL Invitation</h2>
+            <div>Bagikan moment indahmu bersama kami</div>
+        </div>
+    </div>
+    <div class="flex-right">
+        <div class="form">
+            <h1 class="font-secondary fw-500">Login</h1>
+            <div class="font-primary fs-14 mb-20">Silahkan login menggunakan username dan password yang sudah diberikan admin</div>
+            <app-input type="username" [(model)]="form.username" [validation]="formValid.username"
+                (enterAction)="submit()" errorMessage="Required"></app-input>
+            <app-input type="password" [(model)]="form.password" [validation]="formValid.password"
+                (enterAction)="submit()" errorMessage="Required"></app-input>
+        </div>
+    </div>
+</div>
+
+<!-- /* text-field */
+
+
+box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+align-items: center;
+padding: 4px 8px;
+gap: 8px;
+
+width: 389px;
+height: 40px;
+
+/* Neutral/N0 */
+
+background: #FFFFFF;
+/* Neutral/N300
+
+d2d2d2
+*/
+border: 1px solid #D2D2D2;
+border-radius: 4px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0; -->
