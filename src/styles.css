@@ -11,6 +11,16 @@
     --tertiary: #726F7D;
 }
 
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
 }
