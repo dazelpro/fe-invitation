@@ -1,0 +1,26 @@
+<div class="flex-container">
+    <div class="flex-left">
+        <div class="float-one">
+            <img src="/assets/images/float-1.png" alt="">
+        </div>
+        <div class="float-two">
+            <img src="/assets/images/float-2.png" alt="">
+        </div>
+        <div class="section-logo">
+            <h2>DAZEL Invitation</h2>
+            <div>Bagikan moment indahmu bersama kami</div>
+        </div>
+    </div>
+    <div class="flex-right">
+        <div class="form">
+            <h1 class="font-secondary fw-500">Login</h1>
+            <div class="font-primary fs-14 mb-22">Silahkan login menggunakan username dan password yang sudah diberikan
+                admin</div>
+            <app-input type="username" [(model)]="form.username" [validation]="formValid.username"
+                (enterAction)="submit()" errorMessage="Required"></app-input>
+            <app-input type="password" [(model)]="form.password" [validation]="formValid.password"
+                (enterAction)="submit()" errorMessage="Required"></app-input>
+            <button (click)="submit()">Login</button>
+        </div>
+    </div>
+</div>
