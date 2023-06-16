@@ -39,3 +39,22 @@ button:focus {
 	font-size: 14px;
 	color: var(--tertiary);
 }
+
+/* Button */
+.btn {
+	padding: 10px 24px;
+	cursor: pointer;
+}
+
+.btn-full {
+	width: 100%;
+}
+
+.btn-primary {
+	background: #1A2961;
+	color: #FFF;
+	border: none;
+	border-radius: 4px;
+	font-size: 14px;
+	font-weight: 500;
+}
