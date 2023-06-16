@@ -20,9 +20,7 @@ export class LoginComponent implements OnInit {
 
     constructor() {}
 
-    ngOnInit(): void {
-        console.log('tes');
-    }
+    ngOnInit(): void {}
 
     validator() {
         this.formValid.username = this.form.username ? true : false;
@@ -38,7 +36,7 @@ export class LoginComponent implements OnInit {
     submit() {
         this.validator();
         if (this.ready) {
-            // this.login();
+            // todo: integrate with BE
         }
     }
 }
