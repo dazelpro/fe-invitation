@@ -18,6 +18,11 @@ button:focus {
 	margin-top: 4px;
 }
 
+.form-group>label {
+	font-size: 12px;
+	font-weight: 700;
+}
+
 .form-control {
 	display: block;
 	width: 100%;

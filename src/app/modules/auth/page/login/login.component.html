@@ -22,11 +22,15 @@
 				[(model)]="form.username"
 				[validation]="formValid.username"
 				(enterAction)="submit()"
+				label="Username"
+				placeholder="Masukkan username"
 				errorMessage="Required"></app-input>
 			<app-input type="password"
 				[(model)]="form.password"
 				[validation]="formValid.password"
 				(enterAction)="submit()"
+				label="Password"
+				placeholder="Masukkan password"
 				errorMessage="Required"></app-input>
 			<button class="btn btn-full btn-primary"
 				(click)="submit()">Login</button>
