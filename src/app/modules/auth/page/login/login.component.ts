@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { HttpResponseCode } from '../../../../core/constants/error-code.const';
+import { LoginRequest } from '../../../../core/models/login.model';
+import { LoginService } from '../../../../core/services/login.service';
+import { StorageService } from '../../../../core/services/storage.service';
 
 @Component({
     selector: 'app-login',
@@ -18,7 +23,7 @@ export class LoginComponent implements OnInit {
 
     ready = false;
 
-    constructor() {}
+    constructor(private loginService: LoginService, private storageService: StorageService, private router: Router) {}
 
     ngOnInit(): void {}
 
@@ -36,7 +41,30 @@ export class LoginComponent implements OnInit {
     submit() {
         this.validator();
         if (this.ready) {
-            // todo: integrate with BE
+            this.login();
         }
+    }
+
+    login() {
+        const body = this.getRequestBody();
+        this.loginService.login(body).subscribe({
+            next: (resp) => {
+                this.storageService.setToken(resp.data.token);
+                this.router.navigate(['/']);
+            },
+            error: (error) => {
+                if (error.error.code === HttpResponseCode.EMAIL_NOT_FOUND) {
+                    console.log('akun tidak di temukan');
+                    // this.toastrService.error('Email yang anda masukkan tidak terdaftar', 'Mohon periksa kembali email anda, lalu coba lagi.');
+                } else if (error.error.code === HttpResponseCode.INCORRECT_PASSWORD) {
+                    console.log('pass salah');
+                    // this.toastrService.error('Kata sandi yang anda masukkan tidak sesuai', 'Mohon periksa kembali kata sandi anda, lalu coba lagi.');
+                }
+            }
+        });
+    }
+
+    getRequestBody(): LoginRequest {
+        return this.form;
     }
 }

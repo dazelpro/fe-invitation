@@ -5,16 +5,16 @@ button:focus {
 }
 
 .form-group {
-	padding-bottom: 26px;
+	padding-bottom: 22px;
 	position: relative;
 	font-family: 'Raleway', sans-serif;
 }
 
 .form-group>.error {
-	font-size: 12px;
+	font-size: 10px;
 	color: #E50000 !important;
 	position: absolute;
-	left: 0;
+	right: 0;
 	margin-top: 4px;
 }
 
