@@ -1,5 +1,11 @@
 <div class="form-group">
-    <input [type]=type [ngModel]=model (ngModelChange)="updateData($event)" (keydown.enter)="enterProps()"
-        [ngClass]="!validation ? 'form-control-error' : 'form-control'" placeholder="Password">
-    <span class="error" *ngIf="!validation">{{errorMessage}}</span>
+	<label>{{label}}</label>
+	<input [type]=type
+		[ngModel]=model
+		(ngModelChange)="updateData($event)"
+		(keydown.enter)="enterProps()"
+		[ngClass]="!validation ? 'form-control-error' : 'form-control'"
+		[placeholder]=placeholder>
+	<span class="error"
+		*ngIf="!validation">{{errorMessage}}</span>
 </div>
