@@ -48,17 +48,19 @@ export class LoginComponent implements OnInit {
     login() {
         const body = this.getRequestBody();
         this.loginService.login(body).subscribe({
-            next: (resp) => {
-                this.storageService.setToken(resp.data.token);
+            next: (r) => {
+                this.storageService.setToken(r.data.token);
                 this.router.navigate(['/']);
             },
-            error: (error) => {
-                if (error.error.code === HttpResponseCode.EMAIL_NOT_FOUND) {
+            error: (e) => {
+                if (e.error.code === HttpResponseCode.EMAIL_NOT_FOUND) {
                     console.log('akun tidak di temukan');
                     // this.toastrService.error('Email yang anda masukkan tidak terdaftar', 'Mohon periksa kembali email anda, lalu coba lagi.');
-                } else if (error.error.code === HttpResponseCode.INCORRECT_PASSWORD) {
+                } else if (e.error.code === HttpResponseCode.INCORRECT_PASSWORD) {
                     console.log('pass salah');
                     // this.toastrService.error('Kata sandi yang anda masukkan tidak sesuai', 'Mohon periksa kembali kata sandi anda, lalu coba lagi.');
+                } else {
+                    console.log('something is wrong');
                 }
             }
         });

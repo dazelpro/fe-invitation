@@ -7,6 +7,7 @@ import { BehaviorSubject } from 'rxjs';
 export class StorageService {
     public currentUserSubject: BehaviorSubject<any>;
     public currentTokenSubject: BehaviorSubject<String>;
+    public user: any;
 
     constructor() {}
 
@@ -16,21 +17,22 @@ export class StorageService {
 
     public getToken() {
         const token = localStorage.getItem('token');
-        console.log();
         if (!token) {
             this.currentUserSubject = new BehaviorSubject<any>(null);
             this.currentTokenSubject = new BehaviorSubject<String>(null);
             return false;
         } else {
-            const user = JSON.parse(atob(token.split('.')[1]));
-            console.log(user);
-            this.currentUserSubject = new BehaviorSubject<any>(user);
-            this.currentTokenSubject = new BehaviorSubject<String>(token);
-            return token;
+            try {
+                this.user = JSON.parse(atob(token.split('.')[1]));
+                this.currentUserSubject = new BehaviorSubject<any>(this.user);
+                this.currentTokenSubject = new BehaviorSubject<String>(token);
+                return token;
+            } catch (e) {
+                this.clear();
+                return false;
+            }
         }
     }
-
-    verifyToken(token: string) {}
 
     public setToken(token: string) {
         localStorage.setItem('token', token);

@@ -1,0 +1,8 @@
+.dialog {
+	padding: 10px 20px;
+	width: 300px;
+}
+
+.dialog>h2 {
+	margin: 0;
+}
