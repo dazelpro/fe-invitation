@@ -1,8 +1,14 @@
 .dialog {
 	padding: 10px 20px;
-	width: 300px;
+	max-width: 390px;
 }
 
 .dialog>h2 {
 	margin: 0;
+}
+
+.dialog>.img-error {
+	width: 60px;
+	margin: 10px;
+	filter: invert(9%) sepia(100%) saturate(5352%) hue-rotate(359deg) brightness(107%) contrast(121%);
 }

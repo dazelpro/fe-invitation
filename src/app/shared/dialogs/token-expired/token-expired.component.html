@@ -1,4 +1,10 @@
 <div class="dialog ta-center">
-	<h2>Session Timeout</h2>
-	<p>Untuk keamanan, sesi login sudah dibatasi. Untuk melanjutkan, silahkan Login kembali.</p>
+	<img class="img-error"
+		src="assets/icons/stop-fill.svg"
+		alt="stop">
+	<h2 class="font-secondary">Session Timeout</h2>
+	<p class="font-primary">Untuk keamanan akun anda, kami membatasi sesi pemakaian aplikasi. Silahkan login kembali
+		untuk melanjutkan.</p>
+	<button class="btn btn-full btn-primary"
+		(click)="close()">Login</button>
 </div>
