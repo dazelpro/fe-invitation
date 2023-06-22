@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { HttpResponseCode } from '../../../../core/constants/error-code.const';
 import { LoginRequest } from '../../../../core/models/login.model';
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
 
     ready = false;
 
-    constructor(private loginService: LoginService, private storageService: StorageService, private router: Router) {}
+    constructor(private loginService: LoginService, private storageService: StorageService, private router: Router, private _snackBar: MatSnackBar) {}
 
     ngOnInit(): void {}
 
@@ -54,13 +55,11 @@ export class LoginComponent implements OnInit {
             },
             error: (e) => {
                 if (e.error.code === HttpResponseCode.EMAIL_NOT_FOUND) {
-                    console.log('akun tidak di temukan');
-                    // this.toastrService.error('Email yang anda masukkan tidak terdaftar', 'Mohon periksa kembali email anda, lalu coba lagi.');
+                    this._snackBar.open('Akun tidak ditemukan');
                 } else if (e.error.code === HttpResponseCode.INCORRECT_PASSWORD) {
-                    console.log('pass salah');
-                    // this.toastrService.error('Kata sandi yang anda masukkan tidak sesuai', 'Mohon periksa kembali kata sandi anda, lalu coba lagi.');
+                    this._snackBar.open('Mohon periksa kembali password anda');
                 } else {
-                    console.log('something is wrong');
+                    this._snackBar.open('Terdapat kendala pada sistem');
                 }
             }
         });
