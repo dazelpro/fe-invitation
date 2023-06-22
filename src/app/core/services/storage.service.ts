@@ -34,8 +34,8 @@ export class StorageService {
 
     public clear(): void {
         localStorage.clear();
-        this.currentUserSubject.next(null);
-        this.currentTokenSubject.next(null);
+        // this.currentUserSubject.next(null);
+        // this.currentTokenSubject.next(null);
     }
 
     public getToken() {

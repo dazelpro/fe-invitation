@@ -10,7 +10,6 @@ export class AnonymousGuard {
 
     canActivate() {
         const isLogin = this.storageService.getToken();
-        console.log(isLogin);
         if (isLogin) {
             this.router.navigate(['/']);
             return false;
