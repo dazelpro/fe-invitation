@@ -10,6 +10,8 @@ export class AuthGuard {
 
     canActivate() {
         const isLogin = this.storageService.getToken();
+        console.log(isLogin);
+
         if (isLogin) {
             return true;
         } else {

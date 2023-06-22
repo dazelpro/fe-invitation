@@ -52,6 +52,7 @@ export class LoginComponent implements OnInit {
             next: (r) => {
                 this.storageService.setToken(r.data.token);
                 this.router.navigate(['/']);
+                console.log(this.storageService.getUser());
             },
             error: (e) => {
                 if (e.error.code === HttpResponseCode.EMAIL_NOT_FOUND) {

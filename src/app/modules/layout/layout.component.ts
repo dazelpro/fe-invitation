@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StorageService } from '../../core/services/storage.service';
 import { UserService } from '../../core/services/user.service';
 
 @Component({
@@ -7,10 +8,11 @@ import { UserService } from '../../core/services/user.service';
     styleUrls: ['./layout.component.css']
 })
 export class LayoutComponent implements OnInit {
-    constructor(private userService: UserService) {}
+    constructor(private userService: UserService, private storageService: StorageService) {}
 
     ngOnInit(): void {}
     tes() {
+        console.log(this.storageService.getUser());
         this.userService.listUser().subscribe({
             next: (r) => {
                 console.log(r);

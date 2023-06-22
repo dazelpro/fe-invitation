@@ -21,7 +21,7 @@ import { RoutingModule } from './app.routing';
     providers: [
         {
             provide: MAT_SNACK_BAR_DEFAULT_OPTIONS,
-            useValue: { duration: 3000, horizontalPosition: 'end', verticalPosition: 'top' }
+            useValue: { duration: 3000, horizontalPosition: 'end', verticalPosition: 'top', panelClass: ['custom-snackbar'] }
         }
     ],
     bootstrap: [AppComponent]
