@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { HttpResponseCode } from '../../../../core/constants/error-code.const';
+import { Role } from '../../../../core/constants/role.const';
 import { LoginRequest } from '../../../../core/models/login.model';
 import { LoginService } from '../../../../core/services/login.service';
 import { StorageService } from '../../../../core/services/storage.service';
@@ -51,8 +52,7 @@ export class LoginComponent implements OnInit {
         this.loginService.login(body).subscribe({
             next: (r) => {
                 this.storageService.setToken(r.data.token);
-                this.router.navigate(['/']);
-                console.log(this.storageService.getUser());
+                this.redirectTo();
             },
             error: (e) => {
                 if (e.error.code === HttpResponseCode.EMAIL_NOT_FOUND) {
@@ -68,5 +68,20 @@ export class LoginComponent implements OnInit {
 
     getRequestBody(): LoginRequest {
         return this.form;
+    }
+
+    redirectTo() {
+        const role = this.storageService.getRoleUser();
+        switch (role) {
+            case Role.ADMIN.toString():
+                this.router.navigate(['/']);
+                break;
+            case Role.MEMBER.toString():
+                this.router.navigate(['/client']);
+                break;
+            default:
+                this.router.navigate(['/client']);
+                break;
+        }
     }
 }

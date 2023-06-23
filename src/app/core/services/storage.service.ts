@@ -53,4 +53,7 @@ export class StorageService {
     public getUser(): AuthUser {
         return this.currentUserSubject.value;
     }
+    public getRoleUser() {
+        return this.currentUserSubject.value.role.toString();
+    }
 }
