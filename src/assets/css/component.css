@@ -49,6 +49,7 @@ button:focus {
 .btn {
 	padding: 10px 24px;
 	cursor: pointer;
+	transition-duration: 0.5s;
 }
 
 .btn-full {
@@ -56,12 +57,16 @@ button:focus {
 }
 
 .btn-primary {
-	background: #1A2961;
+	background: #1a2961dd;
 	color: #FFF;
 	border: none;
 	border-radius: 4px;
 	font-size: 14px;
 	font-weight: 500;
+}
+
+.btn-primary:hover {
+	background: #1A2961;
 }
 
 /* Dialog */
