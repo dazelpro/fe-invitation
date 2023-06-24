@@ -1,21 +1,87 @@
+/* Margin Bottom */
 .mb-4 {
-    margin-bottom: 4px;
+	margin-bottom: 4px;
 }
+
 .mb-8 {
-    margin-bottom: 8px;
+	margin-bottom: 8px;
 }
+
 .mb-10 {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
+
 .mb-14 {
-    margin-bottom: 14px;
+	margin-bottom: 14px;
 }
+
 .mb-18 {
-    margin-bottom: 18px;
+	margin-bottom: 18px;
 }
+
 .mb-20 {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
+
 .mb-22 {
-    margin-bottom: 22px;
+	margin-bottom: 22px;
+}
+
+@media only screen and (max-width: 700px) {
+	.mb-4-xs {
+		margin-bottom: 4px;
+	}
+
+	.mb-14-xs {
+		margin-bottom: 14px;
+	}
+
+	.mb-20-xs {
+		margin-bottom: 20px;
+	}
+}
+
+/* Margin Top */
+.mt-4 {
+	margin-top: 4px;
+}
+
+.mt-8 {
+	margin-top: 8px;
+}
+
+.mt-10 {
+	margin-top: 10px;
+}
+
+.mt-14 {
+	margin-top: 14px;
+}
+
+.mt-18 {
+	margin-top: 18px;
+}
+
+.mt-20 {
+	margin-top: 20px;
+}
+
+.mt-22 {
+	margin-top: 22px;
+}
+
+.mt-26 {
+	margin-top: 26px;
+}
+
+.mt-30 {
+	margin-top: 30px;
+}
+
+.mt-34 {
+	margin-top: 34px;
+}
+
+.mt-38 {
+	margin-top: 38px;
 }
