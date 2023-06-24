@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
+import { MatRippleModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,7 +17,8 @@ import { RoutingModule } from './app.routing';
         HttpClientModule,
         BrowserAnimationsModule,
         MatDialogModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        MatRippleModule
     ],
     providers: [
         {

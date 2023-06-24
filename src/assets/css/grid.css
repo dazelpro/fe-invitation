@@ -9,6 +9,13 @@
 	margin: auto;
 }
 
+@media only screen and (max-width: 700px) {
+	.max-content {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+}
+
 .container-fluid {
 	padding-right: 2rem;
 	padding-left: 2rem;
@@ -960,4 +967,8 @@
 		-ms-flex-order: 1;
 		order: 1;
 	}
+}
+
+.no-padding {
+	padding: 0 !important;
 }

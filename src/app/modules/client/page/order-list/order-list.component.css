@@ -1,0 +1,43 @@
+.card {
+	background-color: white;
+	border-radius: 5px;
+	border: 1px solid rgb(229 231 235);
+	padding: 10px;
+}
+
+.left {
+	align-items: center;
+}
+
+.left>h3 {
+	margin: 0;
+}
+
+.left>h4 {
+	margin: 0;
+}
+
+.left>p {
+	margin: 0;
+	color: #6B7280;
+}
+
+.right {
+	align-items: center;
+	vertical-align: middle;
+}
+
+.items-order {
+	padding: 10px;
+}
+
+.flex-middle {
+	display: flex;
+	align-items: center;
+}
+
+.avatar-item {
+	width: 30px;
+	border-radius: 50%;
+	vertical-align: middle;
+}
