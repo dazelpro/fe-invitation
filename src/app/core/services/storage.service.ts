@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 import { AuthUser } from '../models/auth.model';
 
@@ -10,7 +11,7 @@ export class StorageService {
     public currentTokenSubject: BehaviorSubject<String>;
     public user: AuthUser;
 
-    constructor() {
+    constructor(private router: Router) {
         const token = localStorage.getItem('token');
         if (!token) {
             this.currentUserSubject = new BehaviorSubject<AuthUser>(null);
@@ -53,7 +54,15 @@ export class StorageService {
     public getUser(): AuthUser {
         return this.currentUserSubject.value;
     }
+
     public getRoleUser() {
         return this.currentUserSubject.value.role.toString();
+    }
+
+    public logout() {
+        this.clear();
+        this.currentUserSubject.next(null);
+        this.currentTokenSubject.next(null);
+        this.router.navigate(['/authentication']);
     }
 }

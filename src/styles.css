@@ -31,3 +31,13 @@ body {
 .black {
 	color: black;
 }
+
+.link {
+	transition-duration: 0.5s;
+	color: #0080FF;
+	cursor: pointer;
+}
+
+.link:hover {
+	color: #0368cc;
+}
