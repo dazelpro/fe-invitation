@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatRippleModule } from '@angular/material/core';
 import { AdminRoutingModule } from './admin.routing';
 import { DashboardComponent } from './page/dashboard/dashboard.component';
 
@@ -7,7 +8,8 @@ import { DashboardComponent } from './page/dashboard/dashboard.component';
     declarations: [DashboardComponent],
     imports: [
         CommonModule,
-        AdminRoutingModule
+        AdminRoutingModule,
+        MatRippleModule
     ]
 })
 export class AdminModule {}

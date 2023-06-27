@@ -9,8 +9,31 @@
 			</div>
 			<div class="col-xs-6 end-xs no-padding">
 				<img class="avatar"
+					[matMenuTriggerFor]="menu"
 					src="https://ui-avatars.com/api/?name={{initial}}&background=1a2961&color=fff"
 					alt="">
+				<mat-menu #menu="matMenu"
+					xPosition="before">
+					<div class="mat-menu-container row middle-xs"
+						(click)="$event.stopPropagation();">
+						<div class="col-xs-3"><img class="avatar"
+								src="https://ui-avatars.com/api/?name={{initial}}&background=1a2961&color=fff"
+								alt="">
+						</div>
+						<div class="col-xs-9">
+							<div class="font-secondary black">Desy Gusrita</div>
+							<div class="font-primary fs-12">@dg</div>
+						</div>
+					</div>
+					<div class="divider"></div>
+					<div class="mat-menu-container"
+						(click)="$event.stopPropagation();">
+						<div class="center-xs">
+							<a (click)="logout()"
+								class="font-primary fs-14 fw-500 link">Logout</a>
+						</div>
+					</div>
+				</mat-menu>
 			</div>
 		</div>
 	</div>

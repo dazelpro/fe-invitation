@@ -23,4 +23,8 @@ export class HeaderComponent {
         }
         return initials;
     }
+
+    logout() {
+        this.storageService.logout();
+    }
 }

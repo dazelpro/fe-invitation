@@ -15,7 +15,8 @@ const routes: Routes = [
         path: '',
         canActivate: [AuthGuard],
         loadChildren: () => import('./modules/layout/layout.module').then((module) => module.LayoutModule)
-    }
+    },
+    { path: '**', redirectTo: 'authentication', pathMatch: 'full' }
 ];
 
 @NgModule({
