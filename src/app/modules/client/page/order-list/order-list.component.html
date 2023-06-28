@@ -18,76 +18,43 @@
 		</div>
 	</div>
 	<div class="mt-30 card no-padding">
-		<div class="row middle-xs items-order">
-			<div class="col-xs-12 col-md-1 start-md center-xs">
-				<div class="left mb-14-xs">
-					<img class="avatar-item"
-						src="https://ui-avatars.com/api/?name=ODAS&background=1a2961&color=fff"
-						alt="">
-				</div>
-			</div>
-			<div class="col-xs-12 col-md-5 start-md center-xs">
-				<div class="left mb-14-xs">
-					<h4 class="font-secondary no-padding black">Odas</h4>
-					<div class="font-primary fs-12 no-padding flex-middle start-md center-xs">
-						<img class="svg-color-green"
-							src="assets/icons/calendar.svg"
-							alt="">&nbsp;
-						<span>Aktif sejak 21 Mei 2023</span>
-					</div>
-					<div class="font-primary fs-12 no-padding flex-middle start-md center-xs mt-4">
-						<img class="svg-color-grey"
-							src="assets/icons/link.svg"
-							alt="">&nbsp;
-						<span>dazelinv.com/zel-desy</span>
+		<div *ngFor="let item of orderList">
+			<div class="row middle-xs items-order">
+				<div class="col-xs-12 col-md-1 start-md center-xs">
+					<div class="left mb-14-xs">
+						<img class="avatar-item"
+							[src]="item.urlImage"
+							alt="icon">
 					</div>
 				</div>
-			</div>
-			<div class="col-xs-12 col-md-6 end-md center-xs">
-				<div class="right">
-					<button class="btn-sm btn-outline"
-						matRipple>Ubah Alamat Website</button>
-					&nbsp;
-					<button class="btn-sm btn-primary"
-						matRipple>Dashboard</button>
-				</div>
-			</div>
-		</div>
-		<div class="divider"></div>
-		<div class="row middle-xs items-order">
-			<div class="col-xs-12 col-md-1 start-md center-xs">
-				<div class="left mb-14-xs">
-					<img class="avatar-item"
-						src="https://ui-avatars.com/api/?name=ODAS&background=1a2961&color=fff"
-						alt="">
-				</div>
-			</div>
-			<div class="col-xs-12 col-md-5 start-md center-xs">
-				<div class="left mb-14-xs">
-					<h4 class="font-secondary no-padding black">Odas</h4>
-					<div class="font-primary fs-12 no-padding flex-middle start-md center-xs">
-						<img class="svg-color-green"
-							src="assets/icons/calendar.svg"
-							alt="">&nbsp;
-						<span>Aktif sejak 21 Mei 2023</span>
+				<div class="col-xs-12 col-md-5 start-md center-xs">
+					<div class="left mb-14-xs">
+						<h4 class="font-secondary no-padding black">{{item.nameItem}}</h4>
+						<div class="font-primary fs-12 no-padding flex-middle start-md center-xs">
+							<img class="svg-color-green"
+								src="assets/icons/calendar.svg"
+								alt="date">&nbsp;
+							<span>Aktif sejak {{item.createdAt}}</span>
+						</div>
+						<div class="font-primary fs-12 no-padding flex-middle start-md center-xs mt-4">
+							<img class="svg-color-grey"
+								src="assets/icons/link.svg"
+								alt="link">&nbsp;
+							<span>dazelinv.com/{{item.url}}</span>
+						</div>
 					</div>
-					<div class="font-primary fs-12 no-padding flex-middle start-md center-xs mt-4">
-						<img class="svg-color-grey"
-							src="assets/icons/link.svg"
-							alt="">&nbsp;
-						<span>dazelinv.com/zel-desy</span>
+				</div>
+				<div class="col-xs-12 col-md-6 end-md center-xs">
+					<div class="right">
+						<button class="btn-sm btn-outline"
+							matRipple>Ubah Alamat Website</button>
+						&nbsp;
+						<button class="btn-sm btn-primary"
+							matRipple>Dashboard</button>
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-12 col-md-6 end-md center-xs">
-				<div class="right">
-					<button class="btn-sm btn-outline"
-						matRipple>Ubah Alamat Website</button>
-					&nbsp;
-					<button class="btn-sm btn-primary"
-						matRipple>Dashboard</button>
-				</div>
-			</div>
+			<div class="divider"></div>
 		</div>
 	</div>
 </div>
