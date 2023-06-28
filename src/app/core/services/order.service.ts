@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { BearerHandler } from '../handlers/bearer.handler';
 import { HttpResponse } from '../models/http.model';
-import { LoginRequest, LoginResponse } from '../models/login.model';
 
 @Injectable({
     providedIn: 'root'
@@ -15,7 +14,7 @@ export class OrderService {
         this.http = new HttpClient(bearerHandler);
     }
 
-    login(body: LoginRequest) {
-        return this.http.post<HttpResponse<LoginResponse>>(`${environment.api.main}/auth`, body);
+    getMyOrder() {
+        return this.http.get<HttpResponse<any>>(`${environment.api.main}/orders/my-order`);
     }
 }
