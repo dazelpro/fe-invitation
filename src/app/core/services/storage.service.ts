@@ -65,4 +65,13 @@ export class StorageService {
         this.currentTokenSubject.next(null);
         this.router.navigate(['/authentication']);
     }
+
+    public setIdParam(id: string) {
+        localStorage.setItem('id-param', id);
+    }
+
+    public getIdParam() {
+        const idParam = localStorage.getItem('id-param');
+        return idParam || null;
+    }
 }
