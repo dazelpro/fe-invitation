@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Breadcrumb } from '../../../../core/models/breadcrumb.model';
 
 @Component({
     selector: 'app-dashboard',
@@ -6,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./dashboard.component.css']
 })
 export class DashboardClientComponent implements OnInit {
-    constructor() {}
+    breadcrumbs: Breadcrumb[] = [];
+
+    constructor() {
+        this.breadcrumbs = [
+            { label: 'Client', url: '/client' },
+            { label: 'Dashboard', url: `/client/dashboard` },
+            { label: 'Detail', url: `/client/dashboard/122` }
+        ];
+    }
 
     ngOnInit(): void {}
 }
