@@ -1,9 +1,10 @@
 ul.breadcrumb {
 	padding: 10px 16px;
 	list-style: none;
-	background-color: #E2EDFD;
+	background-color: #b9d0f3;
 	border-radius: 10px;
 	margin: 10px 0;
+	line-height: 20px;
 }
 
 ul.breadcrumb li {

@@ -12,8 +12,7 @@ export class DashboardClientComponent implements OnInit {
     constructor() {
         this.breadcrumbs = [
             { label: 'Client', url: '/client' },
-            { label: 'Dashboard', url: `/client/dashboard` },
-            { label: 'Detail', url: `/client/dashboard/122` }
+            { label: 'Dashboard', url: `/client/dashboard` }
         ];
     }
 
