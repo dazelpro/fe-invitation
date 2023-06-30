@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { BearerHandler } from '../handlers/bearer.handler';
 import { HttpResponse } from '../models/http.model';
+import { MyOrder } from '../models/order.model';
 
 @Injectable({
     providedIn: 'root'
@@ -16,5 +17,9 @@ export class OrderService {
 
     getMyOrder() {
         return this.http.get<HttpResponse<any>>(`${environment.api.main}/orders/my-order`);
+    }
+
+    updateUrl(body: MyOrder) {
+        return this.http.put<HttpResponse<any>>(`${environment.api.main}/orders/url-website`, body);
     }
 }
