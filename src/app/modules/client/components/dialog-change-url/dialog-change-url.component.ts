@@ -52,7 +52,7 @@ export class DialogChangeUrlComponent implements OnInit {
 
     updateURL() {
         const body = this.form;
-        this.orderService.updateUrl(body).subscribe({
+        this.orderService.update(body).subscribe({
             next: (r) => {
                 this.close(true);
             },

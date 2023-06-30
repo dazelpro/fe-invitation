@@ -19,7 +19,7 @@ export class OrderService {
         return this.http.get<HttpResponse<any>>(`${environment.api.main}/orders/my-order`);
     }
 
-    updateUrl(body: MyOrder) {
+    update(body: MyOrder) {
         return this.http.put<HttpResponse<any>>(`${environment.api.main}/orders/url-website`, body);
     }
 }
