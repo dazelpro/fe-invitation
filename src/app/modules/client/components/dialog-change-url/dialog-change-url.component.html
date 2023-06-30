@@ -1,0 +1,31 @@
+<div class="dialog-header mt-10">
+	<div class="row middle-xs">
+		<div class="col-xs-10 no-padding">
+			<h4>Ubah Alamat Website</h4>
+		</div>
+		<div class="col-xs-2 end-xs no-padding">
+			<img class="link"
+				(click)="close(false)"
+				src="assets/icons/close.svg"
+				alt="close">
+		</div>
+	</div>
+</div>
+<div class="dialog-content">
+	<div class="form-group">
+		<label class="black">Alamat website</label>
+		<div class="input-group prefix">
+			<span class="input-group-addon">www.dazelinv.com/</span>
+			<input type="text"
+				[(ngModel)]="form.url"
+				[ngClass]="!formValid.url ? 'input-prefix input-prefix-error' : 'input-prefix'"
+				name="input">
+		</div>
+		<span class="error"
+			*ngIf="!formValid.url">Required</span>
+	</div>
+	<div class="action">
+		<button (click)="submit()"
+			class="btn btn-primary btn-full">Simpan</button>
+	</div>
+</div>
