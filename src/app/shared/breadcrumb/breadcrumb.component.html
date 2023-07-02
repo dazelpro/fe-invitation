@@ -1,0 +1,5 @@
+<ul class="breadcrumb">
+	<li *ngFor="let breadcrumb of breadcrumbs; let index = index">
+		<a (click)="goTo(breadcrumb.url)">{{breadcrumb.label}}</a>
+	</li>
+</ul>

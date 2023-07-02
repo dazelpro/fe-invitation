@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { HttpResponseCode } from '../../../../core/constants/error-code.const';
+import { Role } from '../../../../core/constants/role.const';
 import { LoginRequest } from '../../../../core/models/login.model';
 import { LoginService } from '../../../../core/services/login.service';
 import { StorageService } from '../../../../core/services/storage.service';
@@ -22,10 +24,18 @@ export class LoginComponent implements OnInit {
     };
 
     ready = false;
+    hide = true;
 
-    constructor(private loginService: LoginService, private storageService: StorageService, private router: Router) {}
+    constructor(
+        private loginService: LoginService,
+        private storageService: StorageService,
+        private router: Router,
+        private _snackBar: MatSnackBar
+    ) {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        console.log(this.formValid);
+    }
 
     validator() {
         this.formValid.username = this.form.username ? true : false;
@@ -48,17 +58,17 @@ export class LoginComponent implements OnInit {
     login() {
         const body = this.getRequestBody();
         this.loginService.login(body).subscribe({
-            next: (resp) => {
-                this.storageService.setToken(resp.data.token);
-                this.router.navigate(['/']);
+            next: (r) => {
+                this.storageService.setToken(r.data.token);
+                this.redirectTo();
             },
-            error: (error) => {
-                if (error.error.code === HttpResponseCode.EMAIL_NOT_FOUND) {
-                    console.log('akun tidak di temukan');
-                    // this.toastrService.error('Email yang anda masukkan tidak terdaftar', 'Mohon periksa kembali email anda, lalu coba lagi.');
-                } else if (error.error.code === HttpResponseCode.INCORRECT_PASSWORD) {
-                    console.log('pass salah');
-                    // this.toastrService.error('Kata sandi yang anda masukkan tidak sesuai', 'Mohon periksa kembali kata sandi anda, lalu coba lagi.');
+            error: (e) => {
+                if (e.error.code === HttpResponseCode.EMAIL_NOT_FOUND) {
+                    this._snackBar.open('Akun tidak ditemukan');
+                } else if (e.error.code === HttpResponseCode.INCORRECT_PASSWORD) {
+                    this._snackBar.open('Mohon periksa kembali password anda');
+                } else {
+                    this._snackBar.open('Terdapat kendala pada sistem');
                 }
             }
         });
@@ -66,5 +76,20 @@ export class LoginComponent implements OnInit {
 
     getRequestBody(): LoginRequest {
         return this.form;
+    }
+
+    redirectTo() {
+        const role = this.storageService.getRoleUser();
+        switch (role) {
+            case Role.ADMIN.toString():
+                this.router.navigate(['/']);
+                break;
+            case Role.MEMBER.toString():
+                this.router.navigate(['/client']);
+                break;
+            default:
+                this.router.navigate(['/client']);
+                break;
+        }
     }
 }
