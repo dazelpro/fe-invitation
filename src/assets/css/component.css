@@ -100,6 +100,8 @@ button:focus {
 	width: 60px;
 	margin: 10px;
 	filter: invert(9%) sepia(100%) saturate(5352%) hue-rotate(359deg) brightness(107%) contrast(121%);
+	margin: auto;
+	padding-bottom: 10px;
 }
 
 /* Snackbar */
@@ -132,5 +134,4 @@ button:focus {
 	background-color: white;
 	border-radius: 5px;
 	border: 1px solid rgb(229 231 235);
-	padding: 10px;
 }
