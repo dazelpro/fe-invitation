@@ -20,23 +20,23 @@
 				admin</div>
 			<div class="col-span-full mt-4">
 				<label for="username"
-					class="block text-sm font-medium leading-6 text-gray-900">Username</label>
+					class="block fs-12 mb-1 text-gray-900">Username</label>
 				<input type="text"
 					[(ngModel)]="form.username"
 					[ngClass]="!formValid.username ? 'border-rose-500' : 'border-slate-200'"
 					id="username"
 					placeholder="Username"
-					class="block w-full rounded-md border border-slate-200 py-1.5 px-3 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6">
+					class="block w-full rounded-md border py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-400">
 			</div>
 			<div class="col-span-full mt-4">
 				<label for="password"
-					class="block text-sm font-medium leading-6 text-gray-900">Password</label>
+					class="block fs-12 mb-1 text-gray-900">Password</label>
 				<div class="relative">
 					<input [type]="hide ? 'password' : 'text'"
 						[(ngModel)]="form.password"
 						[ngClass]="!formValid.password ? 'border-rose-500' : 'border-slate-200'"
 						id="password"
-						class="block w-full rounded-md border py-1.5 px-3 text-gray-900 placeholder:text-gray-400 sm:text-sm sm:leading-6"
+						class="block w-full rounded-md border py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-400"
 						placeholder="Password"
 						required>
 					<div class="absolute right-3 bottom-2.5">
@@ -48,7 +48,7 @@
 				</div>
 			</div>
 			<div class="col-span-full mt-4">
-				<button class="rounded-md text-white bg-indigo-700 w-full py-1.5 px-3"
+				<button class="rounded-md text-white bg-violet-900 w-full py-1.5 px-3"
 					matRipple
 					(click)="submit()">Login</button>
 			</div>

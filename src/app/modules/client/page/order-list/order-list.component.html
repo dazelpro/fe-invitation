@@ -1,58 +1,50 @@
-<div class="max-content mt-3"
-	style="margin-top: 40px;">
-	<div class="mt-30 card no-padding">
-		<div class="row middle-xs"
-			style="padding:10px">
-			<div class="col-xs-8">
-				<div class="left">
-					<h3 class="font-secondary no-padding black">List Order</h3>
-					<p class="font-primary fs-14 no-padding">Manajemen semua undangan digital yang sudah kamu beli
-						disini</p>
-				</div>
+<div class="max-content pt-6">
+	<div class="card mb-6">
+		<div class="flex">
+			<div class="flex-1 w-80 p-4">
+				<h3 class="font-secondary fs-18 fw-500 text-black">List Order</h3>
+				<p class="font-primary fs-14">Manajemen semua undangan digital yang sudah kamu beli
+					disini</p>
 			</div>
-			<div class="col-xs-4 end-xs">
-				<div class="right">
-					<button class="btn btn-primary"
-						matRipple>Order Undangan Lain</button>
-				</div>
+			<div class="flex-none p-4 self-center">
+				<button class="rounded-md text-white fs-14 bg-violet-900 w-full py-1.5 px-3"
+					matRipple>Order Undangan Lain</button>
 			</div>
 		</div>
 	</div>
-	<div class="mt-30 card no-padding">
+	<div class="card">
 		<div *ngFor="let item of orderList">
-			<div class="row middle-xs items-order">
-				<div class="col-xs-12 col-md-1 start-md center-xs">
-					<div class="left mb-14-xs">
-						<img class="avatar-item"
-							[src]="item.urlImage"
-							alt="icon">
+			<div class="flex flex-col sm:flex-row p-4">
+				<div class="basis sm:basis-20 self-center">
+					<img class="avatar-item"
+						[src]="item.urlImage"
+						alt="icon">
+				</div>
+				<div class="basis-1/2 text-center sm:text-left">
+					<h4 class="font-secondary text-black py-1 sm:py-0">{{item.nameItem}}</h4>
+					<div
+						class="font-primary fs-12 flex-middle place-content-center sm:place-content-start py-1 sm:py-0">
+						<img class="svg-color-green"
+							src="assets/icons/calendar.svg"
+							alt="date">&nbsp;
+						<span>Aktif sejak {{item.createdAt | date:'D-M-YYYY'}}</span>
+					</div>
+					<div
+						class="font-primary fs-12 flex-middle place-content-center sm:place-content-start py-1 sm:py-0">
+						<img class="svg-color-grey"
+							src="assets/icons/link.svg"
+							alt="link">&nbsp;
+						<span class="text-blue-500 hover:text-blue-700 cursor-pointer"
+							(click)="openUrl(item.url)">dazelinv.com/{{item.url}}</span>
 					</div>
 				</div>
-				<div class="col-xs-12 col-md-5 start-md center-xs">
-					<div class="left mb-14-xs">
-						<h4 class="font-secondary no-padding black">{{item.nameItem}}</h4>
-						<div class="font-primary fs-12 no-padding flex-middle start-md center-xs">
-							<img class="svg-color-green"
-								src="assets/icons/calendar.svg"
-								alt="date">&nbsp;
-							<span>Aktif sejak {{item.createdAt | date:'D-M-YYYY'}}</span>
-						</div>
-						<div class="font-primary fs-12 no-padding flex-middle start-md center-xs mt-4">
-							<img class="svg-color-grey"
-								src="assets/icons/link.svg"
-								alt="link">&nbsp;
-							<span class="link"
-								(click)="openUrl(item.url)">dazelinv.com/{{item.url}}</span>
-						</div>
-					</div>
-				</div>
-				<div class="col-xs-12 col-md-6 end-md center-xs">
-					<div class="right">
-						<button class="btn-sm btn-outline"
+				<div class="basis-1/2 self-center">
+					<div class="flex mt-1 sm:mt-0 sm:justify-end">
+						<button class="fs-12 rounded-md py-1 px-3 text-violet-900 border border-violet-900"
 							(click)="openDialogChangeUrl(item)"
 							matRipple>Ubah Alamat Website</button>
 						&nbsp;
-						<button class="btn-sm btn-primary"
+						<button class="fs-12 rounded-md py-1 px-3 text-white bg-violet-900"
 							(click)="openDashboard(item)"
 							matRipple>Dashboard</button>
 					</div>

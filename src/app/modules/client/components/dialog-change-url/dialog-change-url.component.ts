@@ -1,7 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { MyOrder } from '../../../../core/models/order.model';
 import { OrderService } from '../../../../core/services/order.service';
 
 @Component({
@@ -10,12 +9,10 @@ import { OrderService } from '../../../../core/services/order.service';
     styleUrls: ['./dialog-change-url.component.css']
 })
 export class DialogChangeUrlComponent implements OnInit {
-    // public form = {
-    //     id: '',
-    //     url: ''
-    // };
-
-    form: MyOrder;
+    public form = {
+        id: '',
+        url: ''
+    };
 
     public formValid = {
         url: true
@@ -23,10 +20,16 @@ export class DialogChangeUrlComponent implements OnInit {
 
     ready = false;
 
-    constructor(public dialogRef: MatDialogRef<DialogChangeUrlComponent>, @Inject(MAT_DIALOG_DATA) public dataDialog: any, private _snackBar: MatSnackBar, private orderService: OrderService) {}
+    constructor(
+        public dialogRef: MatDialogRef<DialogChangeUrlComponent>,
+        @Inject(MAT_DIALOG_DATA) public dataDialog: any,
+        private _snackBar: MatSnackBar,
+        private orderService: OrderService
+    ) {}
 
     ngOnInit(): void {
-        this.form = this.dataDialog;
+        this.form.id = this.dataDialog.id;
+        this.form.url = this.dataDialog.url;
     }
 
     close(arr: boolean) {
