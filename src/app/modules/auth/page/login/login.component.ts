@@ -24,10 +24,18 @@ export class LoginComponent implements OnInit {
     };
 
     ready = false;
+    hide = true;
 
-    constructor(private loginService: LoginService, private storageService: StorageService, private router: Router, private _snackBar: MatSnackBar) {}
+    constructor(
+        private loginService: LoginService,
+        private storageService: StorageService,
+        private router: Router,
+        private _snackBar: MatSnackBar
+    ) {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        console.log(this.formValid);
+    }
 
     validator() {
         this.formValid.username = this.form.username ? true : false;
