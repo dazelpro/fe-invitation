@@ -38,3 +38,13 @@
 		</div>
 	</div>
 </div>
+<!-- <div *ngIf="loading"
+	class="absolute top-12 w-full">
+	<mat-progress-bar *ngIf="loading"
+		mode="indeterminate"></mat-progress-bar>
+</div> -->
+<div *ngIf="loading"
+	class="overlay">
+	<mat-progress-bar class="loading"
+		mode="indeterminate"></mat-progress-bar>
+</div>
