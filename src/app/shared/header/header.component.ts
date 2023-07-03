@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LoadingService } from '../../core/services/loading.service';
 import { StorageService } from '../../core/services/storage.service';
 
 @Component({
@@ -6,10 +7,17 @@ import { StorageService } from '../../core/services/storage.service';
     templateUrl: './header.component.html',
     styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
     public initial: string;
-    constructor(private storageService: StorageService) {
+    public loading: boolean;
+    constructor(private storageService: StorageService, private loadingService: LoadingService) {
         this.initial = this.getInitial();
+    }
+
+    ngOnInit(): void {
+        this.loadingService.isLoading.subscribe((resp) => {
+            this.loading = resp;
+        });
     }
 
     getInitial() {
