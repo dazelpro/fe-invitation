@@ -9,7 +9,7 @@ import { StorageService } from '../../core/services/storage.service';
 })
 export class HeaderComponent implements OnInit {
     public initial: string;
-    loading = true;
+    public loading: boolean;
     constructor(private storageService: StorageService, private loadingService: LoadingService) {
         this.initial = this.getInitial();
     }
