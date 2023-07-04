@@ -1,0 +1,83 @@
+<div class="px-4 py-4">
+	<div class="flex justify-between">
+		<h4 class="text-black">Profil</h4>
+		<img class="cursor-pointer"
+			(click)="close(false)"
+			src="assets/icons/close.svg"
+			alt="close">
+	</div>
+	<div class="col-span-full mt-3">
+		<label for="name"
+			class="block fs-12 mb-1 text-gray-900">Nama</label>
+		<input type="text"
+			[(ngModel)]="form.name"
+			[ngClass]="!formValid.name ? 'border-rose-500' : 'border-slate-200'"
+			id="name"
+			placeholder="Ramdan S.Pd"
+			class="block w-full rounded-md border py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-400">
+	</div>
+	<div class="col-span-full mt-3">
+		<div class="flex gap-3">
+			<div class="w-1/2">
+				<label for="name"
+					class="block fs-12 mb-1 text-gray-900">Nama Panggilan</label>
+				<input type="text"
+					[(ngModel)]="form.nickName"
+					[ngClass]="!formValid.nickName ? 'border-rose-500' : 'border-slate-200'"
+					id="name"
+					placeholder="Ramdan"
+					class="block w-full rounded-md border py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-400">
+			</div>
+			<div class="w-1/2">
+				<label for="name"
+					class="block fs-12 mb-1 text-gray-900">Nama Orangtua</label>
+				<input type="text"
+					[(ngModel)]="form.parentName"
+					id="name"
+					placeholder="Basuki & Martini"
+					class="block w-full rounded-md border border-slate-200 py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-400">
+			</div>
+		</div>
+	</div>
+	<div class="col-span-full mt-3">
+		<label for="name"
+			class="block fs-12 mb-1 text-gray-900">Alamat</label>
+		<textarea [(ngModel)]="form.address"
+			id="name"
+			placeholder="Bandung"
+			class="block w-full rounded-md border border-slate-200 py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-400">
+		</textarea>
+	</div>
+	<div class="col-span-full mt-3">
+		<label for="name"
+			class="block fs-12 mb-1 text-gray-900">Informasi Tambahan</label>
+		<input type="text"
+			[(ngModel)]="form.otherInformation"
+			id="name"
+			placeholder="Putra dari / Anak dari"
+			class="block w-full rounded-md border border-slate-200 py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-400">
+	</div>
+	<div class="col-span-full mt-3">
+		<label for="url"
+			class="block fs-12 mb-1 text-gray-900">Instagram</label>
+		<div class="mb-3">
+			<div class="flex rounded-md border border-slate-200">
+				<span class="flex select-none items-center pl-3 text-gray-500 fs-14">@</span>
+				<input type="text"
+					name="url"
+					id="url"
+					[(ngModel)]="form.instagramLink"
+					autocomplete="url"
+					class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-400 fs-14"
+					placeholder="ramdanaja">
+			</div>
+		</div>
+	</div>
+</div>
+<div class="bg-sky-50 px-4 py-4 flex justify-end">
+	<button (click)="close(false)"
+		class="rounded-md fs-14 py-1.5 px-6 text-violet-900 border border-violet-900">Batal</button>
+	&nbsp;
+	<button (click)="submit()"
+		class="rounded-md text-white fs-14 bg-violet-900 py-1.5 px-6">Simpan</button>
+</div>

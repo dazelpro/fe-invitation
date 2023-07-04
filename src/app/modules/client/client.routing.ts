@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardClientComponent } from './page/dashboard/dashboard.component';
 import { OrderListComponent } from './page/order-list/order-list.component';
+import { ProfileComponent } from './page/profile/profile.component';
 
 const routes: Routes = [
     {
@@ -12,6 +13,10 @@ const routes: Routes = [
     {
         path: 'dashboard',
         component: DashboardClientComponent
+    },
+    {
+        path: 'profile',
+        component: ProfileComponent
     }
 ];
 
