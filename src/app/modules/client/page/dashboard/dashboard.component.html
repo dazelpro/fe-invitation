@@ -1,124 +1,14 @@
 <div class="max-content">
 	<div class="font-secondary fw-500 fs-18 mt-4">Dashboard</div>
 	<app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
-	<div class="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
-		<div class="card p-4 flex items-center">
-			<div class="rounded-md bg-violet-900 p-2">
-				<svg xmlns="http://www.w3.org/2000/svg"
-					width="30"
-					height="30"
-					fill="white"
-					class="bi bi-people"
-					viewBox="0 0 16 16">
-					<path
-						d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" />
-				</svg>
-			</div>
-			<div class="ml-3">
-				<p class="font-secondary fs-12">Total Tamu</p>
-				<p class="fs-20 fw-500 text-black">0</p>
-			</div>
-		</div>
-		<div class="card p-4 flex items-center">
-			<div class="rounded-md bg-violet-900 p-2">
-				<svg xmlns="http://www.w3.org/2000/svg"
-					width="30"
-					height="30"
-					fill="white"
-					class="bi bi-person-check"
-					viewBox="0 0 16 16">
-					<path
-						d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
-					<path
-						d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z" />
-				</svg>
-			</div>
-			<div class="ml-3">
-				<p class="font-secondary fs-12">Tamu Hadir</p>
-				<p class="fs-20 fw-500 text-black">0</p>
-			</div>
-		</div>
-		<div class="card p-4 flex items-center">
-			<div class="rounded-md bg-violet-900 p-2">
-				<svg xmlns="http://www.w3.org/2000/svg"
-					width="30"
-					height="30"
-					fill="white"
-					class="bi bi-person-dash"
-					viewBox="0 0 16 16">
-					<path
-						d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1Zm0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
-					<path
-						d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z" />
-				</svg>
-			</div>
-			<div class="ml-3">
-				<p class="font-secondary fs-12">Tidak Hadir</p>
-				<p class="fs-20 fw-500 text-black">0</p>
-			</div>
-		</div>
-		<div class="card p-4 flex items-center">
-			<div class="rounded-md bg-violet-900 p-2">
-				<svg xmlns="http://www.w3.org/2000/svg"
-					width="30"
-					height="30"
-					fill="white"
-					class="bi bi-envelope-heart"
-					viewBox="0 0 16 16">
-					<path fill-rule="evenodd"
-						d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l3.235 1.94a2.76 2.76 0 0 0-.233 1.027L1 5.384v5.721l3.453-2.124c.146.277.329.556.55.835l-3.97 2.443A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741l-3.968-2.442c.22-.28.403-.56.55-.836L15 11.105V5.383l-3.002 1.801a2.76 2.76 0 0 0-.233-1.026L15 4.217V4a1 1 0 0 0-1-1H2Zm6 2.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
-				</svg>
-			</div>
-			<div class="ml-3">
-				<p class="font-secondary fs-12">Total Undangan</p>
-				<p class="fs-20 fw-500 text-black">0</p>
-			</div>
-		</div>
-		<div class="card p-4 flex items-center">
-			<div class="rounded-md bg-violet-900 p-2">
-				<svg xmlns="http://www.w3.org/2000/svg"
-					width="30"
-					height="30"
-					fill="white"
-					class="bi bi-envelope-paper-heart"
-					viewBox="0 0 16 16">
-					<path fill-rule="evenodd"
-						d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1.133l.941.502A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765L2 3.133V2Zm0 2.267-.47.25A1 1 0 0 0 1 5.4v.817l1 .6v-2.55Zm1 3.15 3.75 2.25L8 8.917l1.25.75L13 7.417V2a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v5.417Zm11-.6 1-.6V5.4a1 1 0 0 0-.53-.882L14 4.267v2.55ZM8 2.982C9.664 1.309 13.825 4.236 8 8 2.175 4.236 6.336 1.31 8 2.982Zm7 4.401-4.778 2.867L15 13.117V7.383Zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734Z" />
-				</svg>
-			</div>
-			<div class="ml-3">
-				<p class="font-secondary fs-12">Undangan Dibuka</p>
-				<p class="fs-20 fw-500 text-black">0</p>
-			</div>
-		</div>
-		<div class="card p-4 flex items-center">
-			<div class="rounded-md bg-violet-900 p-2">
-				<svg xmlns="http://www.w3.org/2000/svg"
-					width="30"
-					height="30"
-					fill="white"
-					class="bi bi-chat-heart"
-					viewBox="0 0 16 16">
-					<path fill-rule="evenodd"
-						d="M2.965 12.695a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2Zm-.8 3.108.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125ZM8 5.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
-				</svg>
-			</div>
-			<div class="ml-3">
-				<p class="font-secondary fs-12">Ucapan & Doa</p>
-				<p class="fs-20 fw-500 text-black">0</p>
-			</div>
-		</div>
-	</div>
-	<div class="fs-14 my-3">MENU</div>
-	<div class="card">
-		<div class="grid grid-cols-2 p-4 cursor-pointer"
-			matRipple>
-			<div class="flex items-center">
-				<div class="rounded-md bg-sky-50 p-2">
+	<div class="py-6">
+		<div class="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
+			<div class="card p-4 flex items-center">
+				<div class="rounded-md bg-violet-900 p-2">
 					<svg xmlns="http://www.w3.org/2000/svg"
-						width="20"
-						height="20"
-						fill="green"
+						width="30"
+						height="30"
+						fill="white"
 						class="bi bi-people"
 						viewBox="0 0 16 16">
 						<path
@@ -126,175 +16,287 @@
 					</svg>
 				</div>
 				<div class="ml-3">
-					<p class="fs-14 fw-500 text-black">Profil Pengantin</p>
+					<p class="font-secondary fs-12">Total Tamu</p>
+					<p class="fs-20 fw-500 text-black">0</p>
 				</div>
 			</div>
-			<div class="flex items-center justify-end">
-				<svg xmlns="http://www.w3.org/2000/svg"
-					width="20"
-					height="20"
-					fill="currentColor"
-					class="bi bi-chevron-right"
-					viewBox="0 0 16 16">
-					<path fill-rule="evenodd"
-						d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-				</svg>
-			</div>
-		</div>
-		<div class="divider"></div>
-		<div class="grid grid-cols-2 p-4 cursor-pointer"
-			matRipple>
-			<div class="flex items-center">
-				<div class="rounded-md bg-sky-50 p-2">
+			<div class="card p-4 flex items-center">
+				<div class="rounded-md bg-violet-900 p-2">
 					<svg xmlns="http://www.w3.org/2000/svg"
-						width="20"
-						height="20"
-						fill="green"
-						class="bi bi-calendar-heart"
+						width="30"
+						height="30"
+						fill="white"
+						class="bi bi-person-check"
+						viewBox="0 0 16 16">
+						<path
+							d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Zm1.679-4.493-1.335 2.226a.75.75 0 0 1-1.174.144l-.774-.773a.5.5 0 0 1 .708-.708l.547.548 1.17-1.951a.5.5 0 1 1 .858.514ZM11 5a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+						<path
+							d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z" />
+					</svg>
+				</div>
+				<div class="ml-3">
+					<p class="font-secondary fs-12">Tamu Hadir</p>
+					<p class="fs-20 fw-500 text-black">0</p>
+				</div>
+			</div>
+			<div class="card p-4 flex items-center">
+				<div class="rounded-md bg-violet-900 p-2">
+					<svg xmlns="http://www.w3.org/2000/svg"
+						width="30"
+						height="30"
+						fill="white"
+						class="bi bi-person-dash"
+						viewBox="0 0 16 16">
+						<path
+							d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM11 12h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1 0-1Zm0-7a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM8 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z" />
+						<path
+							d="M8.256 14a4.474 4.474 0 0 1-.229-1.004H3c.001-.246.154-.986.832-1.664C4.484 10.68 5.711 10 8 10c.26 0 .507.009.74.025.226-.341.496-.65.804-.918C9.077 9.038 8.564 9 8 9c-5 0-6 3-6 4s1 1 1 1h5.256Z" />
+					</svg>
+				</div>
+				<div class="ml-3">
+					<p class="font-secondary fs-12">Tidak Hadir</p>
+					<p class="fs-20 fw-500 text-black">0</p>
+				</div>
+			</div>
+			<div class="card p-4 flex items-center">
+				<div class="rounded-md bg-violet-900 p-2">
+					<svg xmlns="http://www.w3.org/2000/svg"
+						width="30"
+						height="30"
+						fill="white"
+						class="bi bi-envelope-heart"
 						viewBox="0 0 16 16">
 						<path fill-rule="evenodd"
-							d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5ZM1 14V4h14v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1Zm7-6.507c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+							d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l3.235 1.94a2.76 2.76 0 0 0-.233 1.027L1 5.384v5.721l3.453-2.124c.146.277.329.556.55.835l-3.97 2.443A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741l-3.968-2.442c.22-.28.403-.56.55-.836L15 11.105V5.383l-3.002 1.801a2.76 2.76 0 0 0-.233-1.026L15 4.217V4a1 1 0 0 0-1-1H2Zm6 2.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
 					</svg>
 				</div>
 				<div class="ml-3">
-					<p class="fs-14 fw-500 text-black">Detail Acara</p>
+					<p class="font-secondary fs-12">Total Undangan</p>
+					<p class="fs-20 fw-500 text-black">0</p>
 				</div>
 			</div>
-			<div class="flex items-center justify-end">
-				<svg xmlns="http://www.w3.org/2000/svg"
-					width="20"
-					height="20"
-					fill="currentColor"
-					class="bi bi-chevron-right"
-					viewBox="0 0 16 16">
-					<path fill-rule="evenodd"
-						d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-				</svg>
-			</div>
-		</div>
-		<div class="divider"></div>
-		<div class="grid grid-cols-2 p-4 cursor-pointer"
-			matRipple>
-			<div class="flex items-center">
-				<div class="rounded-md bg-sky-50 p-2">
+			<div class="card p-4 flex items-center">
+				<div class="rounded-md bg-violet-900 p-2">
 					<svg xmlns="http://www.w3.org/2000/svg"
-						width="20"
-						height="20"
-						fill="green"
-						class="bi bi-hearts"
+						width="30"
+						height="30"
+						fill="white"
+						class="bi bi-envelope-paper-heart"
 						viewBox="0 0 16 16">
 						<path fill-rule="evenodd"
-							d="M4.931.481c1.627-1.671 5.692 1.254 0 5.015-5.692-3.76-1.626-6.686 0-5.015Zm6.84 1.794c1.084-1.114 3.795.836 0 3.343-3.795-2.507-1.084-4.457 0-3.343ZM7.84 7.642c2.71-2.786 9.486 2.09 0 8.358-9.487-6.268-2.71-11.144 0-8.358Z" />
+							d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v1.133l.941.502A2 2 0 0 1 16 5.4V14a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V5.4a2 2 0 0 1 1.059-1.765L2 3.133V2Zm0 2.267-.47.25A1 1 0 0 0 1 5.4v.817l1 .6v-2.55Zm1 3.15 3.75 2.25L8 8.917l1.25.75L13 7.417V2a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v5.417Zm11-.6 1-.6V5.4a1 1 0 0 0-.53-.882L14 4.267v2.55ZM8 2.982C9.664 1.309 13.825 4.236 8 8 2.175 4.236 6.336 1.31 8 2.982Zm7 4.401-4.778 2.867L15 13.117V7.383Zm-.035 6.88L8 10.082l-6.965 4.18A1 1 0 0 0 2 15h12a1 1 0 0 0 .965-.738ZM1 13.116l4.778-2.867L1 7.383v5.734Z" />
 					</svg>
 				</div>
 				<div class="ml-3">
-					<p class="fs-14 fw-500 text-black">Cerita Cinta</p>
+					<p class="font-secondary fs-12">Undangan Dibuka</p>
+					<p class="fs-20 fw-500 text-black">0</p>
 				</div>
 			</div>
-			<div class="flex items-center justify-end">
-				<svg xmlns="http://www.w3.org/2000/svg"
-					width="20"
-					height="20"
-					fill="currentColor"
-					class="bi bi-chevron-right"
-					viewBox="0 0 16 16">
-					<path fill-rule="evenodd"
-						d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-				</svg>
+			<div class="card p-4 flex items-center">
+				<div class="rounded-md bg-violet-900 p-2">
+					<svg xmlns="http://www.w3.org/2000/svg"
+						width="30"
+						height="30"
+						fill="white"
+						class="bi bi-chat-heart"
+						viewBox="0 0 16 16">
+						<path fill-rule="evenodd"
+							d="M2.965 12.695a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2Zm-.8 3.108.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125ZM8 5.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+					</svg>
+				</div>
+				<div class="ml-3">
+					<p class="font-secondary fs-12">Ucapan & Doa</p>
+					<p class="fs-20 fw-500 text-black">0</p>
+				</div>
 			</div>
 		</div>
-		<div class="divider"></div>
-		<div class="grid grid-cols-2 p-4 cursor-pointer"
-			matRipple>
-			<div class="flex items-center">
-				<div class="rounded-md bg-sky-50 p-2">
+		<div class="fs-14 my-3">MENU</div>
+		<div class="card">
+			<div class="grid grid-cols-2 p-4 cursor-pointer"
+				matRipple>
+				<div class="flex items-center">
+					<div class="rounded-md bg-sky-50 p-2">
+						<svg xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							fill="green"
+							class="bi bi-people"
+							viewBox="0 0 16 16">
+							<path
+								d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8Zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022ZM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4Zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816ZM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0Zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" />
+						</svg>
+					</div>
+					<div class="ml-3">
+						<p class="fs-14 fw-500 text-black">Profil Pengantin</p>
+					</div>
+				</div>
+				<div class="flex items-center justify-end">
 					<svg xmlns="http://www.w3.org/2000/svg"
 						width="20"
 						height="20"
-						fill="green"
-						class="bi bi-images"
+						fill="currentColor"
+						class="bi bi-chevron-right"
 						viewBox="0 0 16 16">
-						<path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
-						<path
-							d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z" />
+						<path fill-rule="evenodd"
+							d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
 					</svg>
 				</div>
-				<div class="ml-3">
-					<p class="fs-14 fw-500 text-black">Galeri</p>
+			</div>
+			<div class="divider"></div>
+			<div class="grid grid-cols-2 p-4 cursor-pointer"
+				matRipple>
+				<div class="flex items-center">
+					<div class="rounded-md bg-sky-50 p-2">
+						<svg xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							fill="green"
+							class="bi bi-calendar-heart"
+							viewBox="0 0 16 16">
+							<path fill-rule="evenodd"
+								d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5ZM1 14V4h14v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1Zm7-6.507c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+						</svg>
+					</div>
+					<div class="ml-3">
+						<p class="fs-14 fw-500 text-black">Detail Acara</p>
+					</div>
 				</div>
-			</div>
-			<div class="flex items-center justify-end">
-				<svg xmlns="http://www.w3.org/2000/svg"
-					width="20"
-					height="20"
-					fill="currentColor"
-					class="bi bi-chevron-right"
-					viewBox="0 0 16 16">
-					<path fill-rule="evenodd"
-						d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-				</svg>
-			</div>
-		</div>
-		<div class="divider"></div>
-		<div class="grid grid-cols-2 p-4 cursor-pointer"
-			matRipple>
-			<div class="flex items-center">
-				<div class="rounded-md bg-sky-50 p-2">
+				<div class="flex items-center justify-end">
 					<svg xmlns="http://www.w3.org/2000/svg"
 						width="20"
 						height="20"
-						fill="green"
-						class="bi bi-gift"
+						fill="currentColor"
+						class="bi bi-chevron-right"
 						viewBox="0 0 16 16">
-						<path
-							d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 14.5V7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zM1 4v2h6V4H1zm8 0v2h6V4H9zm5 3H9v8h4.5a.5.5 0 0 0 .5-.5V7zm-7 8V7H2v7.5a.5.5 0 0 0 .5.5H7z" />
+						<path fill-rule="evenodd"
+							d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
 					</svg>
 				</div>
-				<div class="ml-3">
-					<p class="fs-14 fw-500 text-black">Kado</p>
+			</div>
+			<div class="divider"></div>
+			<div class="grid grid-cols-2 p-4 cursor-pointer"
+				matRipple>
+				<div class="flex items-center">
+					<div class="rounded-md bg-sky-50 p-2">
+						<svg xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							fill="green"
+							class="bi bi-hearts"
+							viewBox="0 0 16 16">
+							<path fill-rule="evenodd"
+								d="M4.931.481c1.627-1.671 5.692 1.254 0 5.015-5.692-3.76-1.626-6.686 0-5.015Zm6.84 1.794c1.084-1.114 3.795.836 0 3.343-3.795-2.507-1.084-4.457 0-3.343ZM7.84 7.642c2.71-2.786 9.486 2.09 0 8.358-9.487-6.268-2.71-11.144 0-8.358Z" />
+						</svg>
+					</div>
+					<div class="ml-3">
+						<p class="fs-14 fw-500 text-black">Cerita Cinta</p>
+					</div>
 				</div>
-			</div>
-			<div class="flex items-center justify-end">
-				<svg xmlns="http://www.w3.org/2000/svg"
-					width="20"
-					height="20"
-					fill="currentColor"
-					class="bi bi-chevron-right"
-					viewBox="0 0 16 16">
-					<path fill-rule="evenodd"
-						d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-				</svg>
-			</div>
-		</div>
-		<div class="divider"></div>
-		<div class="grid grid-cols-2 p-4 cursor-pointer"
-			matRipple>
-			<div class="flex items-center">
-				<div class="rounded-md bg-sky-50 p-2">
+				<div class="flex items-center justify-end">
 					<svg xmlns="http://www.w3.org/2000/svg"
 						width="20"
 						height="20"
-						fill="green"
-						class="bi bi-person-badge-fill"
+						fill="currentColor"
+						class="bi bi-chevron-right"
 						viewBox="0 0 16 16">
-						<path
-							d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z" />
+						<path fill-rule="evenodd"
+							d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
 					</svg>
 				</div>
-				<div class="ml-3">
-					<p class="fs-14 fw-500 text-black">Tamu</p>
+			</div>
+			<div class="divider"></div>
+			<div class="grid grid-cols-2 p-4 cursor-pointer"
+				matRipple>
+				<div class="flex items-center">
+					<div class="rounded-md bg-sky-50 p-2">
+						<svg xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							fill="green"
+							class="bi bi-images"
+							viewBox="0 0 16 16">
+							<path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z" />
+							<path
+								d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2zM14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1zM2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1h-10z" />
+						</svg>
+					</div>
+					<div class="ml-3">
+						<p class="fs-14 fw-500 text-black">Galeri</p>
+					</div>
+				</div>
+				<div class="flex items-center justify-end">
+					<svg xmlns="http://www.w3.org/2000/svg"
+						width="20"
+						height="20"
+						fill="currentColor"
+						class="bi bi-chevron-right"
+						viewBox="0 0 16 16">
+						<path fill-rule="evenodd"
+							d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+					</svg>
 				</div>
 			</div>
-			<div class="flex items-center justify-end">
-				<svg xmlns="http://www.w3.org/2000/svg"
-					width="20"
-					height="20"
-					fill="currentColor"
-					class="bi bi-chevron-right"
-					viewBox="0 0 16 16">
-					<path fill-rule="evenodd"
-						d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-				</svg>
+			<div class="divider"></div>
+			<div class="grid grid-cols-2 p-4 cursor-pointer"
+				matRipple>
+				<div class="flex items-center">
+					<div class="rounded-md bg-sky-50 p-2">
+						<svg xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							fill="green"
+							class="bi bi-gift"
+							viewBox="0 0 16 16">
+							<path
+								d="M3 2.5a2.5 2.5 0 0 1 5 0 2.5 2.5 0 0 1 5 0v.006c0 .07 0 .27-.038.494H15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1v7.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 1 14.5V7a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h2.038A2.968 2.968 0 0 1 3 2.506V2.5zm1.068.5H7v-.5a1.5 1.5 0 1 0-3 0c0 .085.002.274.045.43a.522.522 0 0 0 .023.07zM9 3h2.932a.56.56 0 0 0 .023-.07c.043-.156.045-.345.045-.43a1.5 1.5 0 0 0-3 0V3zM1 4v2h6V4H1zm8 0v2h6V4H9zm5 3H9v8h4.5a.5.5 0 0 0 .5-.5V7zm-7 8V7H2v7.5a.5.5 0 0 0 .5.5H7z" />
+						</svg>
+					</div>
+					<div class="ml-3">
+						<p class="fs-14 fw-500 text-black">Kado</p>
+					</div>
+				</div>
+				<div class="flex items-center justify-end">
+					<svg xmlns="http://www.w3.org/2000/svg"
+						width="20"
+						height="20"
+						fill="currentColor"
+						class="bi bi-chevron-right"
+						viewBox="0 0 16 16">
+						<path fill-rule="evenodd"
+							d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+					</svg>
+				</div>
+			</div>
+			<div class="divider"></div>
+			<div class="grid grid-cols-2 p-4 cursor-pointer"
+				matRipple>
+				<div class="flex items-center">
+					<div class="rounded-md bg-sky-50 p-2">
+						<svg xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							fill="green"
+							class="bi bi-person-badge-fill"
+							viewBox="0 0 16 16">
+							<path
+								d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2zm4.5 0a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1h-3zM8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm5 2.755C12.146 12.825 10.623 12 8 12s-4.146.826-5 1.755V14a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-.245z" />
+						</svg>
+					</div>
+					<div class="ml-3">
+						<p class="fs-14 fw-500 text-black">Tamu</p>
+					</div>
+				</div>
+				<div class="flex items-center justify-end">
+					<svg xmlns="http://www.w3.org/2000/svg"
+						width="20"
+						height="20"
+						fill="currentColor"
+						class="bi bi-chevron-right"
+						viewBox="0 0 16 16">
+						<path fill-rule="evenodd"
+							d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+					</svg>
+				</div>
 			</div>
 		</div>
 	</div>

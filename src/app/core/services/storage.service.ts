@@ -66,12 +66,12 @@ export class StorageService {
         this.router.navigate(['/authentication']);
     }
 
-    public setIdParam(id: string) {
-        localStorage.setItem('id-param', id);
+    public setIdParam(id: string, key: string) {
+        localStorage.setItem(key, id);
     }
 
-    public getIdParam() {
-        const idParam = localStorage.getItem('id-param');
+    public getIdParam(key: string) {
+        const idParam = localStorage.getItem(key);
         return idParam || null;
     }
 }

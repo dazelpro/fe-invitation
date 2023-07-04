@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Breadcrumb } from '../../../../core/models/breadcrumb.model';
+import { StorageService } from '../../../../core/services/storage.service';
 
 @Component({
     selector: 'app-dashboard',
@@ -7,14 +9,18 @@ import { Breadcrumb } from '../../../../core/models/breadcrumb.model';
     styleUrls: ['./dashboard.component.css']
 })
 export class DashboardClientComponent implements OnInit {
+    id: string;
     breadcrumbs: Breadcrumb[] = [];
 
-    constructor() {
+    constructor(private storageService: StorageService, private router: Router) {
         this.breadcrumbs = [
             { label: 'Client', url: '/client' },
             { label: 'Dashboard', url: `/client/dashboard` }
         ];
     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.id = this.storageService.getIdParam('id-order-param');
+        if (!this.id) this.router.navigate(['/client']);
+    }
 }

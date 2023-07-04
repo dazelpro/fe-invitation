@@ -56,7 +56,7 @@ export class OrderListComponent implements OnInit {
     }
 
     openDashboard(item: MyOrder) {
-        this.storageService.setIdParam(item.id);
+        this.storageService.setIdParam(item.id, 'id-order-param');
         this.router.navigate(['/client/dashboard']);
     }
 }
