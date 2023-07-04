@@ -7,11 +7,15 @@ import { ClientRoutingModule } from './client.routing';
 import { DialogChangeUrlComponent } from './components/dialog-change-url/dialog-change-url.component';
 import { DashboardClientComponent } from './page/dashboard/dashboard.component';
 import { OrderListComponent } from './page/order-list/order-list.component';
+import { ProfileComponent } from './page/profile/profile.component';
+import { DialogProfileComponent } from './components/dialog-profile/dialog-profile.component';
 @NgModule({
     declarations: [
         OrderListComponent,
         DialogChangeUrlComponent,
-        DashboardClientComponent
+        DashboardClientComponent,
+        ProfileComponent,
+        DialogProfileComponent
     ],
     imports: [
         CommonModule,
