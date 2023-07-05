@@ -9,13 +9,15 @@ import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { TokenExpiredComponent } from './dialogs/token-expired/token-expired.component';
 import { HeaderComponent } from './header/header.component';
 import { InputComponent } from './input/input.component';
+import { ConfirmationDeleteComponent } from './dialogs/confirmation-delete/confirmation-delete.component';
 
 @NgModule({
     declarations: [
         InputComponent,
         TokenExpiredComponent,
         HeaderComponent,
-        BreadcrumbComponent
+        BreadcrumbComponent,
+        ConfirmationDeleteComponent
     ],
     imports: [
         CommonModule,

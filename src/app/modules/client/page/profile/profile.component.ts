@@ -6,6 +6,7 @@ import { Breadcrumb } from '../../../../core/models/breadcrumb.model';
 import { Profile } from '../../../../core/models/client.model';
 import { ClientService } from '../../../../core/services/client.service';
 import { StorageService } from '../../../../core/services/storage.service';
+import { ConfirmationDeleteComponent } from '../../../../shared/dialogs/confirmation-delete/confirmation-delete.component';
 import { DialogProfileComponent } from '../../components/dialog-profile/dialog-profile.component';
 
 @Component({
@@ -15,6 +16,7 @@ import { DialogProfileComponent } from '../../components/dialog-profile/dialog-p
 })
 export class ProfileComponent implements OnInit {
     id;
+    visibilityAdd = true;
     listProfile: Profile;
     breadcrumbs: Breadcrumb[] = [];
     constructor(
@@ -41,12 +43,30 @@ export class ProfileComponent implements OnInit {
     }
 
     fetchProfile() {
-        let arr = {
+        let params = {
             idOrder: this.id
         };
-        this.clientService.getProfile(arr).subscribe({
+        this.clientService.getProfile(params).subscribe({
             next: (r) => {
                 this.listProfile = r.data.profile;
+                if (r.data.profile.length >= 2) {
+                    this.visibilityAdd = false;
+                }
+            },
+            error: (e) => {
+                console.log(e);
+                this._snackBar.open('Terdapat kendala pada sistem');
+            }
+        });
+    }
+
+    deleteProfile(arr: any) {
+        let params = {
+            id: arr.id
+        };
+        this.clientService.deleteProfile(params).subscribe({
+            next: (r) => {
+                if (r) this.ngOnInit();
             },
             error: (e) => {
                 console.log(e);
@@ -68,6 +88,17 @@ export class ProfileComponent implements OnInit {
         });
         dialogRef.afterClosed().subscribe((r) => {
             if (r) this.ngOnInit();
+        });
+    }
+
+    openDialogDelete(arr: any) {
+        const dialogRef = this.dialog.open(ConfirmationDeleteComponent, {
+            width: '90%',
+            maxWidth: '350px',
+            height: 'auto'
+        });
+        dialogRef.afterClosed().subscribe((r) => {
+            if (r) this.deleteProfile(arr);
         });
     }
 }
