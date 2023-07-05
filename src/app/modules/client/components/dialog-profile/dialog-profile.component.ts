@@ -38,8 +38,20 @@ export class DialogProfileComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        console.log(this.dataDialog);
+        if (this.dataDialog) {
+            this.setForm();
+        }
         this.form.idOrder = this.storageService.getIdParam('id-order-param');
+    }
+
+    setForm() {
+        this.id = this.dataDialog.id;
+        this.form.name = this.dataDialog.name;
+        this.form.nickName = this.dataDialog.nickName;
+        this.form.parentName = this.dataDialog.parentName;
+        this.form.address = this.dataDialog.address;
+        this.form.otherInformation = this.dataDialog.otherInformation;
+        this.form.instagramLink = this.dataDialog.instagramLink;
     }
 
     close(arr: boolean) {
@@ -65,7 +77,7 @@ export class DialogProfileComponent implements OnInit {
     }
 
     upsertProfile() {
-        const body = this.form;
+        const body = { id: this.id, ...this.form };
         this.clientService.upsertProfile(body).subscribe({
             next: (r) => {
                 this.close(true);

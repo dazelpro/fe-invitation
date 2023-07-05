@@ -21,4 +21,8 @@ export class ClientService {
     upsertProfile(body: any) {
         return this.http.post<HttpResponse<any>>(`${environment.api.main}/client/profile`, body);
     }
+
+    deleteProfile(params: any) {
+        return this.http.delete<HttpResponse<any>>(`${environment.api.main}/client/profile`, { params });
+    }
 }
