@@ -11,11 +11,17 @@
 		*ngFor="let item of this.listProfile">
 		<div class="card">
 			<div class="flex items-center p-4">
-				<div>
+				<div *ngIf="item.imageUrl; else noImage">
+					<img class="w-20 rounded-full"
+						[src]="item.imageUrl"
+						onError="this.src='assets/images/person.svg'"
+						alt="">
+				</div>
+				<ng-template #noImage>
 					<img class="w-20 rounded-full svg-color-grey"
 						src="assets/images/person.svg"
 						alt="">
-				</div>
+				</ng-template>
 				<div class="ml-3">
 					<div class="font-secondary text-black fw-500">{{item.name}}</div>
 					<div class="fs-12">{{item.address}}</div>

@@ -11,7 +11,12 @@ import { StorageService } from '../services/storage.service';
     providedIn: 'root'
 })
 export class BearerHandler extends HttpHandler {
-    constructor(private readonly next: HttpHandler, private router: Router, public dialog: MatDialog, private storageService: StorageService) {
+    constructor(
+        private readonly next: HttpHandler,
+        private router: Router,
+        public dialog: MatDialog,
+        private storageService: StorageService
+    ) {
         super();
     }
 

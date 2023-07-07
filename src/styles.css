@@ -38,3 +38,11 @@ body {
 ::-webkit-scrollbar {
 	width: 0;
 }
+
+.cropper {
+	outline: rgba(0, 0, 0, .5) solid 100vw !important;
+}
+
+.source-image {
+	display: inline !important;
+}

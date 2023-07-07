@@ -51,6 +51,8 @@ export class ProfileComponent implements OnInit {
                 this.listProfile = r.data.profile;
                 if (r.data.profile.length >= 2) {
                     this.visibilityAdd = false;
+                } else {
+                    this.visibilityAdd = true;
                 }
             },
             error: (e) => {
