@@ -10,13 +10,15 @@ import { DialogProfileComponent } from './components/dialog-profile/dialog-profi
 import { DashboardClientComponent } from './page/dashboard/dashboard.component';
 import { OrderListComponent } from './page/order-list/order-list.component';
 import { ProfileComponent } from './page/profile/profile.component';
+import { EventComponent } from './page/event/event.component';
 @NgModule({
     declarations: [
         OrderListComponent,
         DialogChangeUrlComponent,
         DashboardClientComponent,
         ProfileComponent,
-        DialogProfileComponent
+        DialogProfileComponent,
+        EventComponent
     ],
     imports: [
         CommonModule,

@@ -6,14 +6,12 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { ConfirmationDeleteComponent } from './dialogs/confirmation-delete/confirmation-delete.component';
 import { TokenExpiredComponent } from './dialogs/token-expired/token-expired.component';
 import { HeaderComponent } from './header/header.component';
-import { InputComponent } from './input/input.component';
-import { ConfirmationDeleteComponent } from './dialogs/confirmation-delete/confirmation-delete.component';
 
 @NgModule({
     declarations: [
-        InputComponent,
         TokenExpiredComponent,
         HeaderComponent,
         BreadcrumbComponent,
@@ -28,7 +26,6 @@ import { ConfirmationDeleteComponent } from './dialogs/confirmation-delete/confi
         MatProgressBarModule
     ],
     exports: [
-        InputComponent,
         HeaderComponent,
         BreadcrumbComponent
     ]
