@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { HttpResponseCode } from '../../../../core/constants/error-code.const';
@@ -12,7 +12,7 @@ import { StorageService } from '../../../../core/services/storage.service';
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
     public form = {
         username: '',
         password: ''
@@ -32,10 +32,6 @@ export class LoginComponent implements OnInit {
         private router: Router,
         private _snackBar: MatSnackBar
     ) {}
-
-    ngOnInit(): void {
-        console.log(this.formValid);
-    }
 
     validator() {
         this.formValid.username = this.form.username ? true : false;

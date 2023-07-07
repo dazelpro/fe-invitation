@@ -5,6 +5,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MAT_SNACK_BAR_DEFAULT_OPTIONS, MatSnackBarModule } from '@angular/material/snack-bar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ImageCropperModule } from 'ngx-image-cropper';
 import { AppComponent } from './app.component';
 import { RoutingModule } from './app.routing';
 import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
@@ -17,7 +18,8 @@ import { LoadingInterceptor } from './core/interceptors/loading.interceptor';
         HttpClientModule,
         BrowserAnimationsModule,
         MatDialogModule,
-        MatSnackBarModule
+        MatSnackBarModule,
+        ImageCropperModule
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true },
