@@ -97,6 +97,23 @@
 				placeholder="https://goo.gl/maps/8v8iWs1K7mz6YDqZ9"
 				class="block w-full rounded-md border py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-300">
 		</div>
+		<div class="col-span-full mt-3">
+			<div class="flex items-center justify-between">
+				<div>
+					<div class="fs-14 fw-500 text-black">Jadikan acara utama?</div>
+					<div class="fs-12 text-gray-90">Hitung mundur mengacu pada acara utama</div>
+				</div>
+				<label class="relative inline-flex items-center cursor-pointer">
+					<input type="checkbox"
+						value="1"
+						class="sr-only peer"
+						[(ngModel)]="form.primary">
+					<div
+						class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+					</div>
+				</label>
+			</div>
+		</div>
 
 
 

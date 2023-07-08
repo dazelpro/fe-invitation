@@ -17,7 +17,7 @@ export class DialogEventComponent implements OnInit {
         name: '',
         address: '',
         mapLink: '',
-        primary: '',
+        primary: 1,
         date: new Date(),
         timeZone: 'WIB',
         timeStart: '',
@@ -53,6 +53,7 @@ export class DialogEventComponent implements OnInit {
         this.form.name = this.dataDialog.name;
         this.form.title = this.dataDialog.title;
         this.form.date = this.dataDialog.date;
+        this.form.primary = this.dataDialog.primary;
         this.form.timeStart = this.dataDialog.timeStart;
         this.form.timeEnd = this.dataDialog.timeEnd;
         this.form.timeTillTheEnd = this.dataDialog.timeTillTheEnd;
