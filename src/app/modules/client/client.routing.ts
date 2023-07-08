@@ -5,6 +5,7 @@ import { DashboardClientComponent } from './page/dashboard/dashboard.component';
 import { EventComponent } from './page/event/event.component';
 import { OrderListComponent } from './page/order-list/order-list.component';
 import { ProfileComponent } from './page/profile/profile.component';
+import { StoryComponent } from './page/story/story.component';
 
 const routes: Routes = [
     {
@@ -22,6 +23,10 @@ const routes: Routes = [
     {
         path: 'event',
         component: EventComponent
+    },
+    {
+        path: 'story',
+        component: StoryComponent
     }
 ];
 
