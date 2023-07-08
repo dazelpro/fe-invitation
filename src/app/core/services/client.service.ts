@@ -25,4 +25,16 @@ export class ClientService {
     deleteProfile(params: any) {
         return this.http.delete<HttpResponse<any>>(`${environment.api.main}/client/profile`, { params });
     }
+
+    getEvent(params: any) {
+        return this.http.get<HttpResponse<any>>(`${environment.api.main}/client/event`, { params });
+    }
+
+    upsertEvent(body: any) {
+        return this.http.post<HttpResponse<any>>(`${environment.api.main}/client/event`, body);
+    }
+
+    deleteEvent(params: any) {
+        return this.http.delete<HttpResponse<any>>(`${environment.api.main}/client/event`, { params });
+    }
 }

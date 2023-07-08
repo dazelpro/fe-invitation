@@ -1,0 +1,125 @@
+<div class="px-4 py-4">
+	<div class="flex justify-between">
+		<h4 class="text-black fw-500">Detail Acara</h4>
+		<img class="cursor-pointer"
+			(click)="close(false)"
+			src="assets/icons/close.svg"
+			alt="close">
+	</div>
+	<div class="scroll">
+		<div class="col-span-full mt-3">
+			<label for="judul"
+				class="block fs-12 mb-1 text-gray-900">Judul</label>
+			<input type="text"
+				id="judul"
+				[(ngModel)]="form.title"
+				[ngClass]="!formValid.title ? 'border-rose-500' : 'border-slate-200'"
+				placeholder="Resepsi / Akad Nikah"
+				class="block w-full rounded-md border py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-300">
+		</div>
+		<div class="col-span-full mt-3">
+			<label for="date"
+				class="block fs-12 mb-1 text-gray-900">Tanggal Acara</label>
+			<input type="time"
+				id="date"
+				[ngModel]="form.date | date:'yyyy-MM-dd'"
+				(ngModelChange)="form.date = $event"
+				type="date"
+				placeholder=""
+				class="block w-full rounded-md border py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-300">
+		</div>
+		<div class="col-span-full mt-3">
+			<div class="flex gap-3">
+				<div class="w-1/2">
+					<label for="start"
+						class="block fs-12 mb-1 text-gray-900">Jam Mulai</label>
+					<input type="time"
+						id="start"
+						[(ngModel)]="form.timeStart"
+						[ngClass]="!formValid.timeStart ? 'border-rose-500' : 'border-slate-200'"
+						class="block w-full rounded-md border py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-300">
+				</div>
+				<div class="w-1/2">
+					<label for="end"
+						class="block fs-12 mb-1 text-gray-900">Jam Selesai</label>
+					<input type="time"
+						id="end"
+						[(ngModel)]="form.timeEnd"
+						class="block w-full rounded-md border py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-300">
+					<div class="flex mt-2">
+						<input type="checkbox"
+							id="untilend"
+							name="untilend"
+							[(ngModel)]="form.timeTillTheEnd"
+							value="1">
+						<label class="fs-14 ml-1 text-gray-900"
+							for="untilend">Sampai selesai</label>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-span-full mt-3">
+			<label class="block fs-12 mb-1 text-gray-900">Zona Waktu</label>
+			<button class="rounded-md text-white fs-14 bg-violet-300 py-1 px-3"
+				[ngClass]="form.timeZone === 'WIB' ? 'bg-violet-900' : 'bg-violet-300'"
+				(click)="chooseTimeZone('WIB')">WIB</button> &nbsp;
+			<button class="rounded-md text-white fs-14 bg-violet-300 py-1 px-3"
+				[ngClass]="form.timeZone === 'WITA' ? 'bg-violet-900' : 'bg-violet-300'"
+				(click)="chooseTimeZone('WITA')">WITA</button> &nbsp;
+			<button class="rounded-md text-white fs-14 bg-violet-300 py-1 px-3"
+				[ngClass]="form.timeZone === 'WIT' ? 'bg-violet-900' : 'bg-violet-300'"
+				(click)="chooseTimeZone('WIT')">WIT</button>
+		</div>
+		<div class="col-span-full mt-3">
+			<label for="tempat"
+				class="block fs-12 mb-1 text-gray-900">Tempat / Lokasi Acara</label>
+			<input type="text"
+				id="tempat"
+				[(ngModel)]="form.name"
+				[ngClass]="!formValid.name ? 'border-rose-500' : 'border-slate-200'"
+				placeholder="Gedung Serbaguna / Kediaman Mempelai Pria"
+				class="block w-full rounded-md border py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-300">
+		</div>
+		<div class="col-span-full mt-3">
+			<label for="address"
+				class="block fs-12 mb-1 text-gray-900">Alamat</label>
+			<textarea id="address"
+				[(ngModel)]="form.address"
+				placeholder="Jl. Belimbing Raya No.21 RT01/RW01"
+				class="block w-full rounded-md border border-slate-200 py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-300"></textarea>
+		</div>
+		<div class="col-span-full mt-3">
+			<label for="linkmap"
+				class="block fs-12 mb-1 text-gray-900">Link Google Maps</label>
+			<input type="text"
+				id="linkmap"
+				[(ngModel)]="form.mapLink"
+				placeholder="https://goo.gl/maps/8v8iWs1K7mz6YDqZ9"
+				class="block w-full rounded-md border py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-300">
+		</div>
+
+
+
+		<!-- <div class="relative">
+				<input [matDatepicker]="picker"
+					class="block w-full rounded-md border border-slate-200 py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-300"
+					placeholder="DD/MM/YYYY"
+					(click)="picker.open()"
+					readonly>
+				<div class="absolute right-3 bottom-2.5"
+					(click)="picker.open()">
+					<img class="svg-color-grey cursor-pointer"
+						src="assets/icons/eye-slash.svg"
+						alt="eye">
+				</div>
+			</div>
+			<mat-datepicker #picker></mat-datepicker> -->
+	</div>
+</div>
+<div class="bg-sky-50 px-4 py-4 flex justify-end">
+	<button (click)="close(false)"
+		class="rounded-md fs-14 py-1.5 px-6 text-violet-900 border border-violet-900">Batal</button>
+	&nbsp;
+	<button (click)="submit()"
+		class="rounded-md text-white fs-14 bg-violet-900 py-1.5 px-6">Simpan</button>
+</div>

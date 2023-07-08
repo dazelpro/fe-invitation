@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardClientComponent } from './page/dashboard/dashboard.component';
+import { EventComponent } from './page/event/event.component';
 import { OrderListComponent } from './page/order-list/order-list.component';
 import { ProfileComponent } from './page/profile/profile.component';
 
@@ -17,6 +18,10 @@ const routes: Routes = [
     {
         path: 'profile',
         component: ProfileComponent
+    },
+    {
+        path: 'event',
+        component: EventComponent
     }
 ];
 

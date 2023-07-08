@@ -1,1 +1,53 @@
-<p>event works!</p>
+<div class="max-content">
+	<div class="font-secondary fw-500 fs-18 mt-4">Detail Acara</div>
+	<app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+	<div class="flex justify-end"
+		*ngIf="visibilityAdd">
+		<button matRipple
+			class="mt-3 rounded-md text-white fs-14 bg-violet-900 py-1.5 px-3"
+			(click)="openDialogEvent(false,null)">+ Detail Acara</button>
+	</div>
+	<div class="mt-6"
+		*ngFor="let item of this.listEvent">
+		<div class="card">
+			<div class="flex items-center p-4">
+				<div class="rounded-full bg-gray-300 p-4">
+					<svg xmlns="http://www.w3.org/2000/svg"
+						width="30"
+						height="30"
+						fill="white"
+						class="bi bi-calendar-heart"
+						viewBox="0 0 16 16">
+						<path fill-rule="evenodd"
+							d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5ZM1 14V4h14v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1Zm7-6.507c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+					</svg>
+				</div>
+				<div class="ml-3 w-1/2">
+					<div class="font-secondary text-black fw-500">{{item.title}}
+						<span class="font-primary fs-10 p-1 rounded-md bg-purple-500 text-white">Acara Utama</span>
+					</div>
+					<div class="fs-12">{{item.name}}</div>
+				</div>
+				<div class="w-1/2">
+					<div class="flex justify-end">
+						<div class="text-right fs-12">
+							{{item.date}} <br />
+							{{item.timeStart}} -
+							<span *ngIf="item.timeTillTheEnd === 1; else timeEnd">Selesai</span>
+							<ng-template #timeEnd>{{item.timeEnd}}</ng-template>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="bg-sky-50 rounded-b-md flex justify-end p-4">
+				<button matRipple
+					class="rounded-md text-white fs-14 bg-rose-500 py-1.5 px-4"
+					(click)="openDialogDelete(item)">Hapus</button>
+				&nbsp;
+				<button matRipple
+					class="rounded-md text-white fs-14 bg-violet-900 py-1.5 px-4"
+					(click)="openDialogEvent(true,item)">Edit</button>
+			</div>
+		</div>
+	</div>
+</div>
