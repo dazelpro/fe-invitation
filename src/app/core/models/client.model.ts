@@ -10,3 +10,16 @@ export interface Profile {
     imageUrl: string;
     ordering: number;
 }
+export interface Event {
+    id: number;
+    idOrder: number;
+    title: string;
+    name: string;
+    address: string;
+    mapLink: string;
+    primary: string;
+    date: string;
+    timeStart: string;
+    timeEnd: number;
+    timeTillTheEnd: number;
+}
