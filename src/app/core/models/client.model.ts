@@ -23,3 +23,11 @@ export interface Event {
     timeEnd: number;
     timeTillTheEnd: number;
 }
+export interface Story {
+    id: number;
+    idOrder: number;
+    title: string;
+    subtitle: string;
+    description: string;
+    indexing: number;
+}

@@ -37,4 +37,16 @@ export class ClientService {
     deleteEvent(params: any) {
         return this.http.delete<HttpResponse<any>>(`${environment.api.main}/client/event`, { params });
     }
+
+    getStory(params: any) {
+        return this.http.get<HttpResponse<any>>(`${environment.api.main}/client/story`, { params });
+    }
+
+    upsertStory(body: any) {
+        return this.http.post<HttpResponse<any>>(`${environment.api.main}/client/story`, body);
+    }
+
+    deleteStory(params: any) {
+        return this.http.delete<HttpResponse<any>>(`${environment.api.main}/client/story`, { params });
+    }
 }

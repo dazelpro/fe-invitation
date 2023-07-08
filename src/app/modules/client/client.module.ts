@@ -12,6 +12,8 @@ import { DashboardClientComponent } from './page/dashboard/dashboard.component';
 import { EventComponent } from './page/event/event.component';
 import { OrderListComponent } from './page/order-list/order-list.component';
 import { ProfileComponent } from './page/profile/profile.component';
+import { StoryComponent } from './page/story/story.component';
+import { DialogStoryComponent } from './components/dialog-story/dialog-story.component';
 @NgModule({
     declarations: [
         OrderListComponent,
@@ -20,7 +22,9 @@ import { ProfileComponent } from './page/profile/profile.component';
         ProfileComponent,
         DialogProfileComponent,
         EventComponent,
-        DialogEventComponent
+        DialogEventComponent,
+        StoryComponent,
+        DialogStoryComponent
     ],
     imports: [
         CommonModule,
