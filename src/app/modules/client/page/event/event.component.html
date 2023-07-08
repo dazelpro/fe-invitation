@@ -24,7 +24,8 @@
 				</div>
 				<div class="ml-3 w-1/2">
 					<div class="font-secondary text-black fw-500">{{item.title}}
-						<span class="font-primary fs-10 p-1 rounded-md bg-purple-500 text-white">Acara Utama</span>
+						<span *ngIf="item.primary"
+							class="font-primary fs-10 p-1 rounded-md bg-purple-500 text-white">Acara Utama</span>
 					</div>
 					<div class="fs-12">{{item.name}}</div>
 				</div>
