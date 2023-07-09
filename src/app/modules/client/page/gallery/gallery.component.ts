@@ -17,6 +17,7 @@ import { DialogGalleryComponent } from '../../components/dialog-gallery/dialog-g
 })
 export class GalleryComponent implements OnInit {
     id;
+    visibilityAdd = true;
     listGallery: Gallery;
     breadcrumbs: Breadcrumb[] = [];
     constructor(
@@ -50,6 +51,11 @@ export class GalleryComponent implements OnInit {
         this.clientService.getGallery(params).subscribe({
             next: (r) => {
                 this.listGallery = r.data.gallery;
+                if (r.data.gallery.length >= 5) {
+                    this.visibilityAdd = false;
+                } else {
+                    this.visibilityAdd = true;
+                }
             },
             error: (e) => {
                 console.log(e);
