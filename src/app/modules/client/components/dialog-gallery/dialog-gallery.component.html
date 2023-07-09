@@ -1,0 +1,66 @@
+<div *ngIf="viewMode; else uploadImage">
+	<img [src]="form.imageUrl"
+		alt="picture">
+</div>
+<ng-template #uploadImage>
+	<div class="px-4 py-4">
+		<div class="flex justify-between">
+			<h4 class="text-black fw-500">Galeri</h4>
+			<img class="cursor-pointer"
+				(click)="close(false)"
+				src="assets/icons/close.svg"
+				alt="close">
+		</div>
+		<div class="scroll">
+			<div>
+				<label class="block fs-12 mb-1 text-gray-900">Upload Foto ke Galeri</label>
+				<div class="flex items-center justify-center w-full"
+					*ngIf="imageNull">
+					<label for="dropzone-file"
+						class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-600 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+						<div class="flex flex-col items-center justify-center pt-5 pb-6">
+							<svg class="w-8 h-8 mb-4 text-gray-500"
+								aria-hidden="true"
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 20 16">
+								<path stroke="currentColor"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									stroke-width="2"
+									d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+							</svg>
+							<p class="mb-2 text-sm text-gray-500"><span class="font-semibold">Click to
+									upload</span></p>
+							<p class="text-xs text-gray-500">PNG or JPG (MAX. 3MB)</p>
+						</div>
+						<input id="dropzone-file"
+							type="file"
+							(change)="fileChangeEvent($event)"
+							class="hidden" />
+					</label>
+				</div>
+				<div *ngIf="!imageNull"
+					class="p-2 border-2 border-gray-600 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-100">
+					<image-cropper [imageChangedEvent]="imageChangedEvent"
+						[maintainAspectRatio]="false"
+						[aspectRatio]="5 / 5"
+						[resizeToWidth]="500"
+						[format]="format"
+						(imageCropped)="imageCropped($event)"
+						(imageLoaded)="imageLoaded($event)"
+						(cropperReady)="cropperReady()"
+						(loadImageFailed)="loadImageFailed()">
+					</image-cropper>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="bg-sky-50 px-4 py-4 flex justify-end">
+		<button (click)="close(false)"
+			class="rounded-md fs-14 py-1.5 px-6 text-violet-900 border border-violet-900">Batal</button>
+		&nbsp;
+		<button (click)="submit()"
+			class="rounded-md text-white fs-14 bg-violet-900 py-1.5 px-6">Simpan</button>
+	</div>
+</ng-template>

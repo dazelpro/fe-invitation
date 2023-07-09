@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardClientComponent } from './page/dashboard/dashboard.component';
 import { EventComponent } from './page/event/event.component';
+import { GalleryComponent } from './page/gallery/gallery.component';
 import { OrderListComponent } from './page/order-list/order-list.component';
 import { ProfileComponent } from './page/profile/profile.component';
 import { StoryComponent } from './page/story/story.component';
@@ -27,6 +28,10 @@ const routes: Routes = [
     {
         path: 'story',
         component: StoryComponent
+    },
+    {
+        path: 'gallery',
+        component: GalleryComponent
     }
 ];
 
