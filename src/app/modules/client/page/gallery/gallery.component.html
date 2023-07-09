@@ -1,7 +1,8 @@
 <div class="max-content pb-6">
 	<div class="font-secondary fw-500 fs-18 mt-4">Galeri</div>
 	<app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
-	<div class="flex justify-end">
+	<div class="flex justify-end"
+		*ngIf="visibilityAdd; else notifMaximum">
 		<button matRipple
 			class="mt-3 rounded-md text-white fs-14 bg-violet-900 py-1.5 px-3 text-center inline-flex items-center"
 			(click)="openDialogGallery(null)">
@@ -19,6 +20,11 @@
 			Upload Foto
 		</button>
 	</div>
+	<ng-template #notifMaximum>
+		<div class="p-4 mb-4 text-sm rounded-lg bg-red-100 text-red-400">
+			Kamu sudah mencapai <b>batas maximum</b> upload foto galeri.
+		</div>
+	</ng-template>
 	<div class="mt-6">
 		<div class="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
 			<div class="card"
