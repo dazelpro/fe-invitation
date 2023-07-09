@@ -31,3 +31,8 @@ export interface Story {
     description: string;
     indexing: number;
 }
+export interface Gallery {
+    id: number;
+    idOrder: number;
+    imageUrl: string;
+}

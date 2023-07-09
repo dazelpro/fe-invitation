@@ -17,4 +17,12 @@ export class UploadService {
     upload(body: FormData) {
         return this.http.post<HttpResponse<any>>(`${environment.api.cdn}/upload`, body);
     }
+
+    uploadGallery(body: FormData) {
+        return this.http.post<HttpResponse<any>>(`${environment.api.cdn}/upload-gallery`, body);
+    }
+
+    deleteImage(body: any) {
+        return this.http.post<HttpResponse<any>>(`${environment.api.cdn}/delete-file`, body);
+    }
 }

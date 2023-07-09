@@ -49,4 +49,16 @@ export class ClientService {
     deleteStory(params: any) {
         return this.http.delete<HttpResponse<any>>(`${environment.api.main}/client/story`, { params });
     }
+
+    getGallery(params: any) {
+        return this.http.get<HttpResponse<any>>(`${environment.api.main}/client/gallery`, { params });
+    }
+
+    insertGallery(body: any) {
+        return this.http.post<HttpResponse<any>>(`${environment.api.main}/client/gallery`, body);
+    }
+
+    deleteGallery(params: any) {
+        return this.http.delete<HttpResponse<any>>(`${environment.api.main}/client/gallery`, { params });
+    }
 }
