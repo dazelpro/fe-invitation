@@ -5,6 +5,7 @@ import { DashboardClientComponent } from './page/dashboard/dashboard.component';
 import { EventComponent } from './page/event/event.component';
 import { GalleryComponent } from './page/gallery/gallery.component';
 import { GiftComponent } from './page/gift/gift.component';
+import { GuestComponent } from './page/guest/guest.component';
 import { OrderListComponent } from './page/order-list/order-list.component';
 import { ProfileComponent } from './page/profile/profile.component';
 import { StoryComponent } from './page/story/story.component';
@@ -37,6 +38,10 @@ const routes: Routes = [
     {
         path: 'gift',
         component: GiftComponent
+    },
+    {
+        path: 'guest',
+        component: GuestComponent
     }
 ];
 

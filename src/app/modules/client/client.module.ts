@@ -18,6 +18,9 @@ import { GalleryComponent } from './page/gallery/gallery.component';
 import { DialogGalleryComponent } from './components/dialog-gallery/dialog-gallery.component';
 import { GiftComponent } from './page/gift/gift.component';
 import { DialogGiftComponent } from './components/dialog-gift/dialog-gift.component';
+import { GuestComponent } from './page/guest/guest.component';
+import { TabGuestComponent } from './components/tab-guest/tab-guest.component';
+import { TabGreetingCardComponent } from './components/tab-greeting-card/tab-greeting-card.component';
 @NgModule({
     declarations: [
         OrderListComponent,
@@ -32,7 +35,10 @@ import { DialogGiftComponent } from './components/dialog-gift/dialog-gift.compon
         GalleryComponent,
         DialogGalleryComponent,
         GiftComponent,
-        DialogGiftComponent
+        DialogGiftComponent,
+        GuestComponent,
+        TabGuestComponent,
+        TabGreetingCardComponent
     ],
     imports: [
         CommonModule,
