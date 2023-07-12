@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Breadcrumb } from '../../../../core/models/breadcrumb.model';
 import { Gallery } from '../../../../core/models/client.model';
 import { ClientService } from '../../../../core/services/client.service';
+import { CommonService } from '../../../../core/services/common.service';
 import { StorageService } from '../../../../core/services/storage.service';
 import { UploadService } from '../../../../core/services/upload.service';
 import { ConfirmationDeleteComponent } from '../../../../shared/dialogs/confirmation-delete/confirmation-delete.component';
@@ -26,7 +27,8 @@ export class GalleryComponent implements OnInit {
         private _snackBar: MatSnackBar,
         private storageService: StorageService,
         private router: Router,
-        private uploadService: UploadService
+        private uploadService: UploadService,
+        public commonService: CommonService
     ) {
         this.breadcrumbs = [
             { label: 'Client', url: '/client' },

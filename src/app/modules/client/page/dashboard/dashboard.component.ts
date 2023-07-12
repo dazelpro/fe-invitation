@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Breadcrumb } from '../../../../core/models/breadcrumb.model';
+import { CommonService } from '../../../../core/services/common.service';
 import { StorageService } from '../../../../core/services/storage.service';
 
 @Component({
@@ -12,7 +13,7 @@ export class DashboardClientComponent implements OnInit {
     id: string;
     breadcrumbs: Breadcrumb[] = [];
 
-    constructor(private storageService: StorageService, private router: Router) {
+    constructor(private storageService: StorageService, private router: Router, public commonService: CommonService) {
         this.breadcrumbs = [
             { label: 'Client', url: '/client' },
             { label: 'Dashboard', url: `/client/dashboard` }
