@@ -7,22 +7,14 @@ import { HttpResponse } from '../models/http.model';
 @Injectable({
     providedIn: 'root'
 })
-export class UploadService {
+export class MasterService {
     protected readonly http: HttpClient;
 
     constructor(bearerHandler: BearerHandler) {
         this.http = new HttpClient(bearerHandler);
     }
 
-    upload(body: FormData) {
-        return this.http.post<HttpResponse<any>>(`${environment.api.cdn}/api/upload`, body);
-    }
-
-    uploadGallery(body: FormData) {
-        return this.http.post<HttpResponse<any>>(`${environment.api.cdn}/api/upload-gallery`, body);
-    }
-
-    deleteImage(body: any) {
-        return this.http.post<HttpResponse<any>>(`${environment.api.cdn}/api/delete-file`, body);
+    getBank(params: any) {
+        return this.http.get<HttpResponse<any>>(`${environment.api.main}/master/bank`, { params });
     }
 }

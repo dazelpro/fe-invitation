@@ -3,6 +3,6 @@ export const environment = {
     env: 'prod-',
     api: {
         main: 'https://api.dazelinv.com',
-        cdn: 'https://cdn.dazelpro.com/api'
+        cdn: 'https://cdn.dazelpro.com'
     }
 };

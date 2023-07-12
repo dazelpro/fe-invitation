@@ -36,3 +36,15 @@ export interface Gallery {
     idOrder: number;
     imageUrl: string;
 }
+export interface Gift {
+    id: number;
+    idOrder: number;
+    type: string;
+    bankName: string;
+    bankLogo: string;
+    bankAccountName: string;
+    bankAccountNumber: string;
+    giftName: string;
+    giftAddress: string;
+    status: number;
+}
