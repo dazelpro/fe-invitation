@@ -83,6 +83,7 @@ export class DialogGiftComponent implements OnInit {
 
     setForm() {
         this.id = this.dataDialog.item.id;
+        this.form.status = this.dataDialog.item.status;
         if (this.mode === 'BANK') {
             this.form.bankName = this.dataDialog.item.bankName;
             this.form.bankLogo = this.dataDialog.item.bankLogo;
