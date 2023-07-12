@@ -3,35 +3,33 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { Breadcrumb } from '../../../../core/models/breadcrumb.model';
-import { Gallery } from '../../../../core/models/client.model';
+import { Gift } from '../../../../core/models/client.model';
 import { ClientService } from '../../../../core/services/client.service';
 import { StorageService } from '../../../../core/services/storage.service';
-import { UploadService } from '../../../../core/services/upload.service';
 import { ConfirmationDeleteComponent } from '../../../../shared/dialogs/confirmation-delete/confirmation-delete.component';
-import { DialogGalleryComponent } from '../../components/dialog-gallery/dialog-gallery.component';
+import { DialogGiftComponent } from '../../components/dialog-gift/dialog-gift.component';
 
 @Component({
-    selector: 'app-gallery',
-    templateUrl: './gallery.component.html',
-    styleUrls: ['./gallery.component.css']
+    selector: 'app-gift',
+    templateUrl: './gift.component.html',
+    styleUrls: ['./gift.component.css']
 })
-export class GalleryComponent implements OnInit {
+export class GiftComponent implements OnInit {
     id;
-    visibilityAdd = true;
-    listGallery: Gallery;
+    listGiftBank: Gift;
+    listGiftAddress: Gift;
     breadcrumbs: Breadcrumb[] = [];
     constructor(
         public dialog: MatDialog,
         private clientService: ClientService,
         private _snackBar: MatSnackBar,
         private storageService: StorageService,
-        private router: Router,
-        private uploadService: UploadService
+        private router: Router
     ) {
         this.breadcrumbs = [
             { label: 'Client', url: '/client' },
             { label: 'Dashboard', url: `/client/dashboard` },
-            { label: 'Galeri', url: `/client/gallery` }
+            { label: 'Kado', url: `/client/gift` }
         ];
     }
 
@@ -40,22 +38,18 @@ export class GalleryComponent implements OnInit {
         if (!this.id) {
             this.router.navigate(['/client']);
         } else {
-            this.fetchGallery();
+            this.fetchGift();
         }
     }
 
-    fetchGallery() {
+    fetchGift() {
         let params = {
             idOrder: this.id
         };
-        this.clientService.getGallery(params).subscribe({
+        this.clientService.getGift(params).subscribe({
             next: (r) => {
-                this.listGallery = r.data.gallery;
-                if (r.data.gallery.length >= 5) {
-                    this.visibilityAdd = false;
-                } else {
-                    this.visibilityAdd = true;
-                }
+                this.listGiftBank = r.data.giftBank;
+                this.listGiftAddress = r.data.giftAddress;
             },
             error: (e) => {
                 console.log(e);
@@ -64,40 +58,26 @@ export class GalleryComponent implements OnInit {
         });
     }
 
-    openDialogGallery(arr: any) {
-        let param = {};
-        if (arr) {
-            param = { data: arr };
-        }
-        const dialogRef = this.dialog.open(DialogGalleryComponent, {
+    openDialogGift(arr: string, item: any) {
+        const dialogRef = this.dialog.open(DialogGiftComponent, {
             width: '90%',
             maxWidth: '500px',
             height: 'auto',
-            ...param
+            data: {
+                mode: arr,
+                item: item
+            }
         });
         dialogRef.afterClosed().subscribe((r) => {
             if (r) this.ngOnInit();
         });
     }
 
-    deleteGallery(arr: any) {
-        this.uploadService.deleteImage(arr).subscribe({
-            next: (r: any) => {
-                console.log(r);
-                this.deleteFromDB(arr);
-            },
-            error: (e) => {
-                console.log(e);
-                this.deleteFromDB(arr);
-            }
-        });
-    }
-
-    deleteFromDB(arr) {
+    deleteGift(arr) {
         let params = {
             id: arr.id
         };
-        this.clientService.deleteGallery(params).subscribe({
+        this.clientService.deleteGift(params).subscribe({
             next: (r) => {
                 if (r) this.ngOnInit();
             },
@@ -115,7 +95,7 @@ export class GalleryComponent implements OnInit {
             height: 'auto'
         });
         dialogRef.afterClosed().subscribe((r) => {
-            if (r) this.deleteGallery(arr);
+            if (r) this.deleteGift(arr);
         });
     }
 }
