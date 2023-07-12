@@ -1,5 +1,6 @@
 <ul class="breadcrumb">
 	<li *ngFor="let breadcrumb of breadcrumbs; let index = index">
-		<a (click)="goTo(breadcrumb.url)">{{breadcrumb.label}}</a>
+		<a class="fs-14 text-blue-500 hover:text-blue-700 cursor-pointer"
+			(click)="goTo(breadcrumb.url)">{{breadcrumb.label}}</a>
 	</li>
 </ul>

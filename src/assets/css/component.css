@@ -115,6 +115,12 @@ button:focus {
 	min-height: 0px !important;
 }
 
+/* Mat Tabs */
+.mat-tab-label {
+	width: 50% !important;
+	font-family: 'Poppins', sans-serif;
+}
+
 /* Divider */
 .divider {
 	border-bottom: 1px solid rgb(229 231 235);
@@ -134,4 +140,10 @@ button:focus {
 	background-color: white;
 	border-radius: 5px;
 	border: 1px solid rgb(229 231 235);
+}
+
+/* Scroll */
+.scroll {
+	max-height: calc(100vh - 170px);
+	overflow: auto;
 }

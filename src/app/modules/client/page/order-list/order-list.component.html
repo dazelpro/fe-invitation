@@ -1,12 +1,23 @@
 <div class="max-content pt-6">
 	<div class="card mb-6">
-		<div class="flex">
+		<!-- <div class="flex">
 			<div class="flex-1 w-80 p-4">
 				<h3 class="font-secondary fs-18 fw-500 text-black">List Order</h3>
 				<p class="font-primary fs-14">Manajemen semua undangan digital yang sudah kamu beli
 					disini</p>
 			</div>
-			<div class="flex-none p-4 self-center">
+			<div class="flex-none sm:w-100 p-4 self-center">
+				<button class="rounded-md text-white fs-14 bg-violet-900 w-full py-1.5 px-3"
+					matRipple>Order Undangan Lain</button>
+			</div>
+		</div> -->
+		<div class="sm:flex justify-between">
+			<div class="p-4 w-80">
+				<h3 class="font-secondary fs-18 fw-500 text-black">List Order</h3>
+				<p class="font-primary fs-14">Manajemen semua undangan digital yang sudah kamu beli
+					disini</p>
+			</div>
+			<div class="p-4 self-center">
 				<button class="rounded-md text-white fs-14 bg-violet-900 w-full py-1.5 px-3"
 					matRipple>Order Undangan Lain</button>
 			</div>
@@ -27,15 +38,15 @@
 						<img class="svg-color-green"
 							src="assets/icons/calendar.svg"
 							alt="date">&nbsp;
-						<span>Aktif sejak {{item.createdAt | date:'D-M-YYYY'}}</span>
+						<span>Aktif sejak {{item.createdAt | date:'dd-M-YYYY'}}</span>
 					</div>
 					<div
 						class="font-primary fs-12 flex-middle place-content-center sm:place-content-start py-1 sm:py-0">
 						<img class="svg-color-grey"
 							src="assets/icons/link.svg"
 							alt="link">&nbsp;
-						<span class="text-blue-500 hover:text-blue-700 cursor-pointer"
-							(click)="openUrl(item.url)">dazelinv.com/{{item.url}}</span>
+						<a class="text-blue-500 hover:text-blue-700 cursor-pointer"
+							(click)="openUrl(item.url)">dazelinv.com/{{item.url}}</a>
 					</div>
 				</div>
 				<div class="basis-1/2 self-center">

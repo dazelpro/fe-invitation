@@ -1,0 +1,49 @@
+<div class="max-content">
+	<div class="flex justify-between items-center mt-4">
+		<div class="font-secondary fw-500 fs-18">Profil</div>
+		<div>
+			<a (click)="commonService.goToWebsite()"
+				class="fs-12 text-blue-600 cursor-pointer dark:text-blue-500 hover:underline">
+				Lihat website
+			</a>
+		</div>
+	</div>
+	<app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+	<div class="flex justify-end"
+		*ngIf="visibilityAdd">
+		<button matRipple
+			class="mt-3 rounded-md text-white fs-14 bg-violet-900 py-1.5 px-3"
+			(click)="openDialogProfile(false,null)">+ Profil Mempelai</button>
+	</div>
+	<div class="mt-6"
+		*ngFor="let item of this.listProfile">
+		<div class="card">
+			<div class="flex items-center p-4">
+				<div *ngIf="item.imageUrl; else noImage">
+					<img class="w-20 rounded-full"
+						[src]="item.imageUrl"
+						onError="this.src='assets/images/person.svg'"
+						alt="">
+				</div>
+				<ng-template #noImage>
+					<img class="w-20 rounded-full svg-color-grey"
+						src="assets/images/person.svg"
+						alt="">
+				</ng-template>
+				<div class="ml-3">
+					<div class="font-secondary text-black fw-500">{{item.name}}</div>
+					<div class="fs-12">{{item.address}}</div>
+				</div>
+			</div>
+			<div class="bg-sky-50 rounded-b-md flex justify-end p-4">
+				<button matRipple
+					class="rounded-md text-white fs-14 bg-rose-500 py-1.5 px-4"
+					(click)="openDialogDelete(item)">Hapus</button>
+				&nbsp;
+				<button matRipple
+					class="rounded-md text-white fs-14 bg-violet-900 py-1.5 px-4"
+					(click)="openDialogProfile(true,item)">Edit</button>
+			</div>
+		</div>
+	</div>
+</div>

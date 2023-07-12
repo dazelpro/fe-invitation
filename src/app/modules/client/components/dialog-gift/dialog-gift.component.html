@@ -1,0 +1,128 @@
+<div *ngIf="mode==='BANK'">
+	<div class="px-4 py-4">
+		<div class="flex justify-between">
+			<h4 class="text-black fw-500">Kado Digital</h4>
+			<img class="cursor-pointer"
+				(click)="close(false)"
+				src="assets/icons/close.svg"
+				alt="close">
+		</div>
+		<div class="scroll">
+			<div class="col-span-full mt-3">
+				<label for="title"
+					class="block fs-12 mb-1 text-gray-900">Pilih Bank</label>
+				<div class="grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
+					<div *ngFor="let item of bankMasterList">
+						<div class="card p-3 cursor-pointer"
+							(click)="chooseBank(item.bankName,imgPatch+item.bankLogo)"
+							[ngClass]="form.bankName === item.bankName ? 'bg-violet-50 border-violet-900' : ''">
+							<img class="w-20 justify-center m-auto"
+								[src]="imgPatch+item.bankLogo"
+								[alt]="item.bankCode">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-span-full mt-3">
+				<label for="bankAccountName"
+					class="block fs-12 mb-1 text-gray-900">Nama Rekening Bank / Wallet</label>
+				<div class="mb-3">
+					<div class="flex rounded-md border"
+						[ngClass]="!formValid.bankAccountName ? 'border-rose-500' : 'border-slate-200'">
+						<span class="flex select-none items-center pl-3 text-gray-500 fs-14">a/n</span>
+						<input type="text"
+							name="bankAccountName"
+							id="bankAccountName"
+							[(ngModel)]="form.bankAccountName"
+							class="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 placeholder:text-gray-300 fs-14"
+							placeholder="Budi Ramdan">
+					</div>
+				</div>
+			</div>
+			<div class="col-span-full mt-3">
+				<label for="norek"
+					class="block fs-12 mb-1 text-gray-900">Nomor Rekening Bank / Wallet</label>
+				<input type="text"
+					id="norek"
+					[(ngModel)]="form.bankAccountNumber"
+					[ngClass]="!formValid.bankAccountNumber ? 'border-rose-500' : 'border-slate-200'"
+					placeholder="XXXXXXXX"
+					class="block w-full rounded-md border py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-300">
+			</div>
+			<div class="col-span-full mt-3">
+				<div class="flex items-center justify-between">
+					<div>
+						<div class="fs-14 fw-500 text-black">Terlihat</div>
+						<div class="fs-10 text-gray-90">Jika dimatikan, kado tidak akan tampil di website</div>
+					</div>
+					<label class="relative inline-flex items-center cursor-pointer">
+						<input type="checkbox"
+							value="1"
+							class="sr-only peer"
+							[(ngModel)]="form.status">
+						<div
+							class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+						</div>
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div *ngIf="mode==='ADDRESS'">
+	<div class="px-4 py-4">
+		<div class="flex justify-between">
+			<h4 class="text-black fw-500">Pengiriman Kado</h4>
+			<img class="cursor-pointer"
+				(click)="close(false)"
+				src="assets/icons/close.svg"
+				alt="close">
+		</div>
+		<div class="scroll">
+			<div class="col-span-full mt-3">
+				<label for="namapengiriman"
+					class="block fs-12 mb-1 text-gray-900">Nama</label>
+				<input type="text"
+					id="namapengiriman"
+					[(ngModel)]="form.giftName"
+					[ngClass]="!formValid.giftName ? 'border-rose-500' : 'border-slate-200'"
+					placeholder="Budi Ramdan"
+					class="block w-full rounded-md border py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-300">
+			</div>
+			<div class="col-span-full mt-3">
+				<label for="alamatkado"
+					class="block fs-12 mb-1 text-gray-900">Alamat</label>
+				<textarea id="alamatkado"
+					[(ngModel)]="form.giftAddress"
+					[ngClass]="!formValid.giftAddress ? 'border-rose-500' : 'border-slate-200'"
+					placeholder="Jl. Belimbing Raya No.21 RT01/RW01"
+					class="block w-full rounded-md border py-1.5 px-3 fs-14 text-gray-900 placeholder:text-gray-300"></textarea>
+			</div>
+			<div class="col-span-full mt-3">
+				<div class="flex items-center justify-between">
+					<div>
+						<div class="fs-14 fw-500 text-black">Terlihat</div>
+						<div class="fs-10 text-gray-90">Jika dimatikan, alamat tidak akan tampil di website</div>
+					</div>
+					<label class="relative inline-flex items-center cursor-pointer">
+						<input type="checkbox"
+							value="1"
+							class="sr-only peer"
+							[(ngModel)]="form.status">
+						<div
+							class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+						</div>
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="bg-sky-50 px-4 py-4 flex justify-end">
+	<button (click)="close(false)"
+		class="rounded-md fs-14 py-1.5 px-6 text-violet-900 border border-violet-900">Batal</button>
+	&nbsp;
+	<button (click)="submit()"
+		class="rounded-md text-white fs-14 bg-violet-900 py-1.5 px-6">Simpan</button>
+</div>

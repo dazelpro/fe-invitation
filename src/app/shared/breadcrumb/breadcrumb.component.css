@@ -18,15 +18,3 @@ ul.breadcrumb li+li:before {
 	content: "/";
 	font-size: 12px;
 }
-
-ul.breadcrumb li a {
-	color: #1E6AC7;
-	text-decoration: none;
-	cursor: pointer;
-	font-size: 14px;
-}
-
-ul.breadcrumb li a:hover {
-	color: #01447e;
-	text-decoration: underline;
-}

@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { MatRippleModule } from '@angular/material/core';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { MaterialModule } from '../../material.module';
 import { AuthRoutingModule } from './auth.routing';
 import { ChangePasswordComponent } from './page/change-password/change-password.component';
 import { LoginComponent } from './page/login/login.component';
@@ -17,7 +17,7 @@ import { LoginComponent } from './page/login/login.component';
         AuthRoutingModule,
         SharedModule,
         FormsModule,
-        MatRippleModule
+        MaterialModule
     ]
 })
 export class AuthModule {}
