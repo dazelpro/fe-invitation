@@ -24,14 +24,22 @@
 							<div class="fs-12">{{item.bankAccountNumber}}</div>
 						</div>
 					</div>
-					<div class="bg-sky-50 rounded-b-md flex justify-end p-4">
-						<button matRipple
-							class="rounded-md text-white fs-14 bg-rose-500 py-1.5 px-4"
-							(click)="openDialogDelete(item)">Hapus</button>
-						&nbsp;
-						<button matRipple
-							class="rounded-md text-white fs-14 bg-violet-900 py-1.5 px-4"
-							(click)="openDialogGift('BANK', item)">Edit</button>
+					<div class="bg-sky-50 rounded-b-md flex justify-between items-center p-4">
+						<div class="font-primary fs-12">
+							<div class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded"
+								*ngIf="!item.status">
+								Tidak terlihat
+							</div>
+						</div>
+						<div class="flex justify-end">
+							<button matRipple
+								class="rounded-md text-white fs-14 bg-rose-500 py-1.5 px-4"
+								(click)="openDialogDelete(item)">Hapus</button>
+							&nbsp;
+							<button matRipple
+								class="rounded-md text-white fs-14 bg-violet-900 py-1.5 px-4"
+								(click)="openDialogGift('BANK', item)">Edit</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -66,14 +74,22 @@
 							<div class="fs-12">{{item.giftAddress}}</div>
 						</div>
 					</div>
-					<div class="bg-sky-50 rounded-b-md flex justify-end p-4">
-						<button matRipple
-							class="rounded-md text-white fs-14 bg-rose-500 py-1.5 px-4"
-							(click)="openDialogDelete(item)">Hapus</button>
-						&nbsp;
-						<button matRipple
-							class="rounded-md text-white fs-14 bg-violet-900 py-1.5 px-4"
-							(click)="openDialogGift('ADDRESS', item)">Edit</button>
+					<div class="bg-sky-50 rounded-b-md flex justify-between items-center p-4">
+						<div class="font-primary fs-12">
+							<div class="bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded"
+								*ngIf="!item.status">
+								Tidak terlihat
+							</div>
+						</div>
+						<div class="flex justify-end">
+							<button matRipple
+								class="rounded-md text-white fs-14 bg-rose-500 py-1.5 px-4"
+								(click)="openDialogDelete(item)">Hapus</button>
+							&nbsp;
+							<button matRipple
+								class="rounded-md text-white fs-14 bg-violet-900 py-1.5 px-4"
+								(click)="openDialogGift('ADDRESS', item)">Edit</button>
+						</div>
 					</div>
 				</div>
 			</div>
