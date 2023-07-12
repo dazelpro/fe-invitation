@@ -1,0 +1,25 @@
+<div class="max-content">
+	<div class="flex justify-between items-center mt-4">
+		<div class="font-secondary fw-500 fs-18">Kado</div>
+		<div>
+			<a (click)="commonService.goToWebsite()"
+				class="fs-12 text-blue-600 cursor-pointer dark:text-blue-500 hover:underline">
+				Lihat website
+			</a>
+		</div>
+	</div>
+	<app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+	<mat-tab-group animationDuration="0ms"
+		class="font-primary">
+		<mat-tab label="Daftar Tamu">
+			<ng-template matTabContent>
+				<app-tab-guest></app-tab-guest>
+			</ng-template>
+		</mat-tab>
+		<mat-tab label="Kartu Ucapan">
+			<ng-template matTabContent>
+				<app-tab-greeting-card></app-tab-greeting-card>
+			</ng-template>
+		</mat-tab>
+	</mat-tab-group>
+</div>
