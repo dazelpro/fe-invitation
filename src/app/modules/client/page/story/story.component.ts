@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { Breadcrumb } from '../../../../core/models/breadcrumb.model';
 import { Story } from '../../../../core/models/client.model';
 import { ClientService } from '../../../../core/services/client.service';
+import { CommonService } from '../../../../core/services/common.service';
 import { StorageService } from '../../../../core/services/storage.service';
 import { ConfirmationDeleteComponent } from '../../../../shared/dialogs/confirmation-delete/confirmation-delete.component';
 import { DialogStoryComponent } from '../../components/dialog-story/dialog-story.component';
@@ -23,7 +24,8 @@ export class StoryComponent implements OnInit {
         private clientService: ClientService,
         private _snackBar: MatSnackBar,
         private storageService: StorageService,
-        private router: Router
+        private router: Router,
+        public commonService: CommonService
     ) {
         this.breadcrumbs = [
             { label: 'Client', url: '/client' },

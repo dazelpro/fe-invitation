@@ -1,5 +1,13 @@
 <div class="max-content pb-6">
-	<div class="font-secondary fw-500 fs-18 mt-4">Galeri</div>
+	<div class="flex justify-between items-center mt-4">
+		<div class="font-secondary fw-500 fs-18">Galeri</div>
+		<div>
+			<a (click)="commonService.goToWebsite()"
+				class="fs-12 text-blue-600 cursor-pointer dark:text-blue-500 hover:underline">
+				Lihat website
+			</a>
+		</div>
+	</div>
 	<app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
 	<div class="flex justify-end"
 		*ngIf="visibilityAdd; else notifMaximum">
