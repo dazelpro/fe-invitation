@@ -48,3 +48,13 @@ export interface Gift {
     giftAddress: string;
     status: number;
 }
+export interface Guest {
+    id: number;
+    idOrder: number;
+    name: string;
+    phone: string;
+    email: string;
+    view: string;
+    confirm: string;
+    numberOfGuest: string;
+}
