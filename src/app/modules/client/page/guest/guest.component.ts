@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Breadcrumb } from '../../../../core/models/breadcrumb.model';
 import { CommonService } from '../../../../core/services/common.service';
 
@@ -9,7 +10,8 @@ import { CommonService } from '../../../../core/services/common.service';
 })
 export class GuestComponent implements OnInit {
     breadcrumbs: Breadcrumb[] = [];
-    constructor(public commonService: CommonService) {
+    activeTab: number = 0; //0 = Guest; 1 = Greeting Card
+    constructor(public commonService: CommonService, private router: Router, private _activatedroute: ActivatedRoute) {
         this.breadcrumbs = [
             { label: 'Client', url: '/client' },
             { label: 'Dashboard', url: `/client/dashboard` },
@@ -17,5 +19,16 @@ export class GuestComponent implements OnInit {
         ];
     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.activeTab = this._activatedroute.snapshot.queryParams.tab || 0;
+    }
+
+    setActiveTab(tab: number) {
+        this.activeTab = tab;
+        this.router.navigate(['/client/guest'], {
+            queryParams: {
+                tab: tab
+            }
+        });
+    }
 }

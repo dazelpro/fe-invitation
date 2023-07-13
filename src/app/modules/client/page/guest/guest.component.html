@@ -10,6 +10,8 @@
 	</div>
 	<app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
 	<mat-tab-group animationDuration="0ms"
+		[selectedIndex]="activeTab"
+		(selectedIndexChange)="setActiveTab($event)"
 		class="font-primary">
 		<mat-tab label="Daftar Tamu">
 			<ng-template matTabContent>

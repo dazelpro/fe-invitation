@@ -83,4 +83,16 @@ export class ClientService {
     deleteGuest(params: any) {
         return this.http.delete<HttpResponse<any>>(`${environment.api.main}/client/guest`, { params });
     }
+
+    getGreeting(params: any) {
+        return this.http.get<HttpResponse<any>>(`${environment.api.main}/client/greeting`, { params });
+    }
+
+    upsertGreeting(body: any) {
+        return this.http.post<HttpResponse<any>>(`${environment.api.main}/client/greeting`, body);
+    }
+
+    deleteGreeting(params: any) {
+        return this.http.delete<HttpResponse<any>>(`${environment.api.main}/client/greeting`, { params });
+    }
 }

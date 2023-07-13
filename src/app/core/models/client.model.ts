@@ -58,3 +58,11 @@ export interface Guest {
     confirm: string;
     numberOfGuest: string;
 }
+export interface Greeting {
+    id: number;
+    idOrder: number;
+    idUser: number;
+    name: string;
+    message: string;
+    status: number;
+}

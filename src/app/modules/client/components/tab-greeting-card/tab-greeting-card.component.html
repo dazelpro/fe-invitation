@@ -1,0 +1,72 @@
+<section>
+	<div class="flex justify-end mt-3">
+		<button matRipple
+			class="mt-3 rounded-md text-white fs-14 bg-violet-900 py-1.5 px-3">
+			<svg xmlns="http://www.w3.org/2000/svg"
+				width="16"
+				height="16"
+				fill="currentColor"
+				class="bi bi-cloud-arrow-down inline"
+				viewBox="0 0 16 16">
+				<path fill-rule="evenodd"
+					d="M7.646 10.854a.5.5 0 0 0 .708 0l2-2a.5.5 0 0 0-.708-.708L8.5 9.293V5.5a.5.5 0 0 0-1 0v3.793L6.354 8.146a.5.5 0 1 0-.708.708l2 2z" />
+				<path
+					d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z" />
+			</svg> Download
+		</button>
+	</div>
+	<div class="card mt-4 p-4">
+		<div *ngFor="let item of this.listGreeting">
+			<div class="flex justify-between items-start mt-3">
+				<div class="flex items-start">
+					<div class="rounded-full bg-gray-300 p-2">
+						<svg xmlns="http://www.w3.org/2000/svg"
+							width="20"
+							height="20"
+							fill="white"
+							class="bi bi-chat-heart"
+							viewBox="0 0 16 16">
+							<path fill-rule="evenodd"
+								d="M2.965 12.695a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2Zm-.8 3.108.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125ZM8 5.993c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132Z" />
+						</svg>
+					</div>
+					<div class="text-black fw-500 ml-3 fs-14">
+						{{item.name}}
+						<span class="fs-10 bg-red-100 text-red-800 mr-2 px-2.5 py-0.5 rounded"
+							*ngIf="!item.status">
+							Tidak terlihat
+						</span>
+						<br />
+						<div class="fw-400 fs-12 p-2 bg-sky-50 rounded-md mt-2">{{item.message}}</div>
+					</div>
+				</div>
+				<div class="flex items-center">
+					<!-- <div class="rounded-full p-2 cursor-pointer"
+						matRipple>
+						<svg xmlns="http://www.w3.org/2000/svg"
+							width="16"
+							height="16"
+							fill="red"
+							class="bi bi-trash"
+							viewBox="0 0 16 16">
+							<path
+								d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+							<path
+								d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+						</svg>
+					</div> -->
+					<label class="relative inline-flex items-center cursor-pointer">
+						<input type="checkbox"
+							value="1"
+							[checked]="item.status"
+							class="sr-only peer">
+						<div
+							class="w-11 h-6 bg-gray-200 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
+						</div>
+					</label>
+				</div>
+			</div>
+			<div class="divider mt-3"></div>
+		</div>
+	</div>
+</section>
