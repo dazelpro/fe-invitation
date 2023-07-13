@@ -13,7 +13,7 @@ export class GuestComponent implements OnInit {
         this.breadcrumbs = [
             { label: 'Client', url: '/client' },
             { label: 'Dashboard', url: `/client/dashboard` },
-            { label: 'Kado', url: `/client/gift` }
+            { label: 'Tamu', url: `/client/guest` }
         ];
     }
 

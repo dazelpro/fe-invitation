@@ -21,6 +21,7 @@ import { DialogGiftComponent } from './components/dialog-gift/dialog-gift.compon
 import { GuestComponent } from './page/guest/guest.component';
 import { TabGuestComponent } from './components/tab-guest/tab-guest.component';
 import { TabGreetingCardComponent } from './components/tab-greeting-card/tab-greeting-card.component';
+import { DialogGuestComponent } from './components/dialog-guest/dialog-guest.component';
 @NgModule({
     declarations: [
         OrderListComponent,
@@ -38,7 +39,8 @@ import { TabGreetingCardComponent } from './components/tab-greeting-card/tab-gre
         DialogGiftComponent,
         GuestComponent,
         TabGuestComponent,
-        TabGreetingCardComponent
+        TabGreetingCardComponent,
+        DialogGuestComponent
     ],
     imports: [
         CommonModule,
