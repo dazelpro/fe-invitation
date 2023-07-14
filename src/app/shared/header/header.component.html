@@ -13,15 +13,16 @@
 					xPosition="before">
 					<div class="mat-menu-container"
 						(click)="$event.stopPropagation();">
-						<div class="flex flex-row">
+						<div class="flex flex-row gap-2">
 							<div class="basis-1/3 self-center">
 								<img class="rounded-full w-8"
 									src="https://ui-avatars.com/api/?name={{initial}}&background=1a2961&color=fff"
 									alt="">
 							</div>
 							<div class="basis-full">
-								<div class="font-secondary text-black">Desy Gusrita</div>
-								<div class="font-primary fs-12">@dg</div>
+								<div style="max-width: 129px; white-space: nowrap;overflow: hidden;text-overflow: ellipsis;"
+									class="font-secondary text-black">{{name}}</div>
+								<div class="font-primary fs-12">@{{username}}</div>
 							</div>
 						</div>
 					</div>
