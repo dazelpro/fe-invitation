@@ -61,13 +61,13 @@
 		<div class="col-span-full mt-3">
 			<label class="block fs-12 mb-1 text-gray-900">Zona Waktu</label>
 			<button class="rounded-md text-white fs-14 bg-violet-300 py-1 px-3"
-				[ngClass]="form.timeZone === 'WIB' ? 'bg-violet-900' : 'bg-violet-300'"
+				[ngClass]="form.timeZone === 'WIB' ? 'bg-sky-700' : 'bg-violet-300'"
 				(click)="chooseTimeZone('WIB')">WIB</button> &nbsp;
 			<button class="rounded-md text-white fs-14 bg-violet-300 py-1 px-3"
-				[ngClass]="form.timeZone === 'WITA' ? 'bg-violet-900' : 'bg-violet-300'"
+				[ngClass]="form.timeZone === 'WITA' ? 'bg-sky-700' : 'bg-violet-300'"
 				(click)="chooseTimeZone('WITA')">WITA</button> &nbsp;
 			<button class="rounded-md text-white fs-14 bg-violet-300 py-1 px-3"
-				[ngClass]="form.timeZone === 'WIT' ? 'bg-violet-900' : 'bg-violet-300'"
+				[ngClass]="form.timeZone === 'WIT' ? 'bg-sky-700' : 'bg-violet-300'"
 				(click)="chooseTimeZone('WIT')">WIT</button>
 		</div>
 		<div class="col-span-full mt-3">
@@ -135,8 +135,8 @@
 </div>
 <div class="bg-sky-50 px-4 py-4 flex justify-end">
 	<button (click)="close(false)"
-		class="rounded-md fs-14 py-1.5 px-6 text-violet-900 border border-violet-900">Batal</button>
+		class="rounded-md fs-14 py-1.5 px-6 text-sky-700 border border-sky-700">Batal</button>
 	&nbsp;
 	<button (click)="submit()"
-		class="rounded-md text-white fs-14 bg-violet-900 py-1.5 px-6">Simpan</button>
+		class="rounded-md text-white fs-14 bg-sky-700 py-1.5 px-6">Simpan</button>
 </div>
