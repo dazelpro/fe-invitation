@@ -15,7 +15,7 @@
 					<div *ngFor="let item of bankMasterList">
 						<div class="card p-3 cursor-pointer"
 							(click)="chooseBank(item.bankName,imgPatch+item.bankLogo)"
-							[ngClass]="form.bankName === item.bankName ? 'bg-violet-50 border-violet-900' : ''">
+							[ngClass]="form.bankName === item.bankName ? 'bg-violet-50 border-sky-700' : ''">
 							<img class="w-20 justify-center m-auto"
 								[src]="imgPatch+item.bankLogo"
 								[alt]="item.bankCode">
@@ -121,8 +121,8 @@
 
 <div class="bg-sky-50 px-4 py-4 flex justify-end">
 	<button (click)="close(false)"
-		class="rounded-md fs-14 py-1.5 px-6 text-violet-900 border border-violet-900">Batal</button>
+		class="rounded-md fs-14 py-1.5 px-6 text-sky-700 border border-sky-700">Batal</button>
 	&nbsp;
 	<button (click)="submit()"
-		class="rounded-md text-white fs-14 bg-violet-900 py-1.5 px-6">Simpan</button>
+		class="rounded-md text-white fs-14 bg-sky-700 py-1.5 px-6">Simpan</button>
 </div>
