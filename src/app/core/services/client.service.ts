@@ -14,6 +14,9 @@ export class ClientService {
         this.http = new HttpClient(bearerHandler);
     }
 
+    getCounterDashboard(params: any) {
+        return this.http.get<HttpResponse<any>>(`${environment.api.main}/client/dashboard`, { params });
+    }
     getProfile(params: any) {
         return this.http.get<HttpResponse<any>>(`${environment.api.main}/client/profile`, { params });
     }
