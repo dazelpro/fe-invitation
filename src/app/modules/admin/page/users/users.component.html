@@ -1,1 +1,97 @@
-<p>users works!</p>
+<div class="max-content">
+	<div class="flex justify-between items-center mt-4 mb-2">
+		<div class="font-secondary fw-500 fs-18">Users</div>
+	</div>
+	<app-breadcrumb [breadcrumbs]="breadcrumbs"></app-breadcrumb>
+	<div class="py-2">
+		<div class="flex justify-end">
+			<button matRipple
+				class="rounded-md text-white fs-14 bg-sky-700 py-1.5 px-3">+ User</button>
+			<div class="ml-1"
+				*ngIf="this.commonService.isOwner()">
+				<button matRipple
+					class="rounded-md text-white fs-14 bg-sky-700 py-1.5 px-3">+ User Administrator</button>
+			</div>
+		</div>
+		<div class="card mt-4 p-4">
+			<div class="flex justify-between">
+				<div class="fs-12 text-black fw-500">Pencarian</div>
+				<div class="fs-12">0 tamu</div>
+			</div>
+			<div class="mb-3 mt-1">
+				<div class="flex rounded-md border">
+					<span class="flex select-none items-center pl-3 text-gray-500 fs-14">
+						<svg xmlns="http://www.w3.org/2000/svg"
+							width="16"
+							height="16"
+							fill="currentColor"
+							class="bi bi-search"
+							viewBox="0 0 16 16">
+							<path
+								d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+						</svg>
+					</span>
+					<input type="text"
+						name="bankAccountName"
+						class="block flex-1 border-0 bg-transparent py-1.5 pl-2 text-gray-900 placeholder:text-gray-300 fs-14"
+						placeholder="Jhon Doe">
+				</div>
+			</div>
+			<div *ngFor="let item of this.listUser">
+				<div class="flex justify-between items-center hover:bg-sky-50 py-2">
+					<div class="flex items-center">
+						<div class="rounded-full bg-gray-300 p-2">
+							<svg xmlns="http://www.w3.org/2000/svg"
+								width="20"
+								height="20"
+								fill="white"
+								class="bi bi-person"
+								viewBox="0 0 16 16">
+								<path
+									d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
+							</svg>
+						</div>
+						<div class="font-secondary text-black fw-500 ml-3 fs-12">
+							{{item.name}}
+							<div>
+								<span class="font-primary fs-10 text-gray-500">@{{item.username}}</span>
+							</div>
+						</div>
+					</div>
+					<div class="flex"
+						*ngIf="item.role !== 1">
+						<div class="rounded-full p-2 cursor-pointer"
+							matRipple>
+							<svg xmlns="http://www.w3.org/2000/svg"
+								width="16"
+								height="16"
+								fill="#f43f5e"
+								class="bi bi-trash"
+								viewBox="0 0 16 16">
+								<path
+									d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
+								<path
+									d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z" />
+							</svg>
+						</div>
+						<div class="rounded-full p-2 cursor-pointer"
+							matRipple>
+							<svg xmlns="http://www.w3.org/2000/svg"
+								width="16"
+								height="16"
+								fill="#0e7490"
+								class="bi bi-pencil-square"
+								viewBox="0 0 16 16">
+								<path
+									d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
+								<path fill-rule="evenodd"
+									d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" />
+							</svg>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
