@@ -66,3 +66,11 @@ export interface Greeting {
     message: string;
     status: number;
 }
+export interface CounterDashboard {
+    counterGuest: number;
+    counterGuestPresent: number;
+    counterGuestNotPresent: number;
+    counterGuestUncertain: number;
+    counterGreetingCard: number;
+    invitationOpened: number;
+}
