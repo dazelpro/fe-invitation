@@ -9,6 +9,8 @@ import { StorageService } from '../../core/services/storage.service';
 })
 export class HeaderComponent implements OnInit {
     public initial: string;
+    public name: string;
+    public username: string;
     public loading: boolean;
     constructor(private storageService: StorageService, private loadingService: LoadingService) {
         this.initial = this.getInitial();
@@ -18,6 +20,8 @@ export class HeaderComponent implements OnInit {
         this.loadingService.isLoading.subscribe((resp) => {
             this.loading = resp;
         });
+        this.name = this.storageService.getUser().name;
+        this.username = this.storageService.getUser().username;
     }
 
     getInitial() {
